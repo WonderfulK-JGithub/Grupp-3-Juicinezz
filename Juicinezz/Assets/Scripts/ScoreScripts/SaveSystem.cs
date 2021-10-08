@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
@@ -9,12 +8,11 @@ public static class SaveSystem
     /// <summary> Vart sparfilen ska sparas</summary>
     static string fileLocation = Application.persistentDataPath + "ButMyHopeWillNeverDaaaaie.sus";
 
-
     /// <summary> Sparar data i en sparfil</summary>
     public static void Save(SaveData data)
     {
         string jsonString = JsonUtility.ToJson(data); //gör om spardatan till en JSON string
-
+        Debug.Log(jsonString);
         File.WriteAllText(fileLocation, jsonString); //sparar stringen på en sparfil
     }
 
@@ -24,7 +22,6 @@ public static class SaveSystem
         if(File.Exists(fileLocation)) //kollar om filen finns
         {
             string jsonString = File.ReadAllText(fileLocation); //Sparar filens text i en string (stringens information är i JSON)
-
             SaveData data = JsonUtility.FromJson<SaveData>(jsonString); //gör om json stringen till information med datatypen SaveData
 
             return data;
@@ -37,20 +34,26 @@ public static class SaveSystem
             return data;
         }
     }
+
+    public static void Delete()
+    {
+        File.Delete(fileLocation);
+    }
 }
 
 
 public class SaveData
 {
-    public List<ScoreInfo> leaderBoard; //Yeah, ett leaderboard
-
+    public List<ScoreInfo> leaderBoard = null; //Yeah, ett leaderboard
     public SaveData()
     {
         leaderBoard = new List<ScoreInfo>();
     }
 }
+
+[System.Serializable]
 public class ScoreInfo
 {
-    public string name; //namnet på spelaren som står på leaderboarden
+    public string playerName; //namnet på spelaren som står på leaderboarden
     public int score; //antal poäng den spelaren fick
 }
