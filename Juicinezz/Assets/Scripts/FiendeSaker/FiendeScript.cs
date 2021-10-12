@@ -17,5 +17,16 @@ public class FiendeScript : GrunderFiender
         base.BasicAttack();
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+        {
+            print("ded");
+        }
+    }
 
+    private void OnDestroy()
+    {
+        base.dead();
+    }
 }

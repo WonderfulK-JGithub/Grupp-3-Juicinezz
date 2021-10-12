@@ -21,9 +21,14 @@ public class SkjutandeFiendeScript : GrunderFiender
 
         if (attacktimer > attackintervall)
         {
-            Instantiate(Kula);
+            Instantiate(Kula, FiendeBody.position, Quaternion.identity);
 
             attacktimer = 0;
         }
+    }
+
+    private void OnDestroy()
+    {
+        base.dead();
     }
 }

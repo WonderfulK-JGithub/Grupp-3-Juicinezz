@@ -20,5 +20,10 @@ public class Projectile : MonoBehaviour
             enemy.TakeDamage(damage);
         }
         Destroy(gameObject);*/
+
+        if (collision.tag == "Fiende")
+        {
+            Destroy(collision.gameObject);
+        }
     }
 }

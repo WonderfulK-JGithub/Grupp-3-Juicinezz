@@ -8,14 +8,16 @@ public class GrunderFiender : MonoBehaviour
     public int direction = 1;
     public int VerticalDirection = 1;
     public float attacktimer;
-    public float attackintervall = 15;
-    public float verticalstartpos;    
-    
+    public float attackintervall = 10;
+    public float verticalstartpos;
+    public GameObject deadparticle;
+
     // Start is called before the first frame update
     public void setup()
     {
+        print("yes");
         FiendeBody = GetComponent<Rigidbody2D>();
-        verticalstartpos = transform.position.y; // lagrar start höjden av fienden
+        verticalstartpos = Random.Range(1, 4); // lagrar start höjden av fienden
     }
 
     public void Moving()
@@ -45,5 +47,10 @@ public class GrunderFiender : MonoBehaviour
 
             attacktimer = 0; //nollställer räknaren. 
         }
+    }
+
+    public void dead()
+    {
+        Instantiate(deadparticle, transform.position, Quaternion.identity);
     }
 }
