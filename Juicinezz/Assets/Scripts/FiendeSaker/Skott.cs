@@ -14,6 +14,19 @@ public class Skott : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        bullet.velocity = new Vector2(0, 5);
+        bullet.velocity = new Vector2(0, -5);
+
+        if (transform.position.y < -5)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+        {
+            print("ded");
+        }
     }
 }
