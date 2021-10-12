@@ -3,7 +3,7 @@ using UnityEngine;
 using System.IO;
 
 //av K-J
-public static class SaveSystem
+public static class SaveSystem //eftersom allt detta är static slipper jag lägga detta script på ett object
 {
     /// <summary> Vart sparfilen ska sparas</summary>
     static string fileLocation = Application.persistentDataPath + "ButMyHopeWillNeverDaaaaie.sus";

@@ -46,6 +46,12 @@ public class ScoreManager : MonoBehaviour
         NewContender();
     }
 
+    public void TestDeleteTheThing()
+    {
+        SaveSystem.Delete();
+        currentLeaderBoard = SaveSystem.Load().leaderBoard;
+    }
+
     /// <summary> Lägger till poäng och ändrar poäng texten </summary>
     public void AddScorePoints(int points,Vector3 textPosition)
     {
