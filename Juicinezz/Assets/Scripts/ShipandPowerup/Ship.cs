@@ -4,6 +4,7 @@ public class Ship : MonoBehaviour
 {
     [SerializeField]
     float speed = 5;
+    float HP = 1;
     void Start()
     {
 
@@ -30,6 +31,15 @@ public class Ship : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
         {
             transform.position += new Vector3(speed, 0, 0) * Time.deltaTime;
+        }
+    }
+    public void TakeDamage(int damage)
+    {
+        HP -= damage;
+
+        if (HP <= 0)
+        {
+            Destroy(gameObject);
         }
     }
 }
