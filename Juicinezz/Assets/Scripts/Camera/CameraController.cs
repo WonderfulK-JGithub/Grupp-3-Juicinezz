@@ -1,14 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+//av K-J
 public class CameraController : MonoBehaviour
 {
-    [SerializeField,Range(0.1f,0.5f)] float shakeSmoothness = 0f;
-    [SerializeField,Range(0f,2f)] float shakeBaseMagnitude = 0f;
-    [SerializeField,Range(0.2f,0.6f)] float shakeTime = 0f;
+    [SerializeField,Range(0f,0.2f)] float shakeMagnitude = 0f; //hur stark screenshaken ska vara
+    [SerializeField,Range(0.2f,0.6f)] float shakeTime = 0f;//hur länge den ska vara
 
-    float timer = 0f;
+    float timer = 0f;//timer som håller koll på när screenshaken ska sluta
+    float power = 0f;//hur mycket positionen kan ändras
+    float powerReduction = 0f;//hur mycket mindre power man ska få varje sekund
 
     void FixedUpdate()
     {
@@ -16,19 +16,24 @@ public class CameraController : MonoBehaviour
         {
             timer -= Time.fixedDeltaTime;
 
-            Vector3 shakePosition = new Vector3(Random.Range(-shakeBaseMagnitude, shakeBaseMagnitude), Random.Range(-shakeBaseMagnitude, shakeBaseMagnitude), -10f);
+            Vector3 shakePosition = new Vector3(Random.Range(-power, power), Random.Range(-power, power), 0f); //hittar en random float mellan negativ och positiv power, för både x och y position
 
-            transform.position = Vector3.Lerp(transform.position,shakePosition,shakeSmoothness);
+            transform.position = new Vector3(0f,0f,-10f) + shakePosition; //ger kameran en ny position
+
+            power -= powerReduction * Time.deltaTime;//Minskar kraften på screenshaken (så att det blir en smoth transition och att den inte går från 100% till 0% på en frame)
         }
         else
         {
-            transform.position = Vector3.MoveTowards(transform.position, new Vector3(0f, 0f, -10f), shakeSmoothness);
+            transform.position = new Vector3(0f, 0f, -10f);
         }
     }
 
 
     public void ScreenShake()
     {
+        //ger private variablerna rätt värde baserat på variablerna som man kan ändra i inspektorn
         timer = shakeTime;
+        power = shakeMagnitude;
+        powerReduction = power / timer;
     }
 }
