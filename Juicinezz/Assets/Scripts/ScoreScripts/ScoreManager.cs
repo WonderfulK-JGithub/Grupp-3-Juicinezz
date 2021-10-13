@@ -25,8 +25,6 @@ public class ScoreManager : MonoBehaviour
         current = this;
         currentLeaderBoard = SaveSystem.Load().leaderBoard;
     }
-
-
     
 
     [Header("Text")]
