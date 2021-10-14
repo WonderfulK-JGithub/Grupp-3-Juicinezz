@@ -23,7 +23,7 @@ public class Projectile : MonoBehaviour
 
         if (collision.tag == "Fiende")
         {
-            Destroy(collision.gameObject);
+            collision.GetComponent<GrunderFiender>().Dead();
         }
     }
 }

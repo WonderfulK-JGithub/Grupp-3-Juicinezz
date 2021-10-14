@@ -12,12 +12,14 @@ public class GrunderFiender : MonoBehaviour
     public float verticalstartpos;
     public GameObject deadparticle;
 
+    public Vector2 enemySpeed;
+    public int pointValue;
+
     // Start is called before the first frame update
     public void setup()
     {
         print("yes");
         FiendeBody = GetComponent<Rigidbody2D>();
-        verticalstartpos = Random.Range(1, 4); // lagrar start höjden av fienden
     }
 
     public void Moving()
@@ -26,7 +28,7 @@ public class GrunderFiender : MonoBehaviour
         {
             direction *= -1;
         }
-        FiendeBody.velocity = new Vector2(5 * direction, (transform.position.y - verticalstartpos) * VerticalDirection); //multiplicerar hastigheten med riktningen så att den färdas i rätt riktning
+        FiendeBody.velocity = new Vector2(enemySpeed.x * direction, (transform.position.y - verticalstartpos) * VerticalDirection * enemySpeed.y); //multiplicerar hastigheten med riktningen så att den färdas i rätt riktning
         // Y axeln håller objektet stilla om den är vid starthöjden av objektet, om den sedan flyttas lite neråt så kommer den att fortsätta i den riktningen och vänds om vid kanten av skärmen.
     }
 
@@ -41,16 +43,26 @@ public class GrunderFiender : MonoBehaviour
         attacktimer += Time.deltaTime;
         if (attacktimer > attackintervall) // räknar upp till 15 sekunder och får fienden att attackera 
         {
-            VerticalDirection = 1; // ser till att fienden färdas i rätt riktning 
+            if(Random.Range(0,2) == 0)
+            {
+                VerticalDirection = 1; // ser till att fienden färdas i rätt riktning 
 
-            transform.position -= new Vector3(0, 0.1f, 0); //flyttar ner objektet lite vilket får den att börja åka ner
+                transform.position -= new Vector3(0, 0.1f, 0); //flyttar ner objektet lite vilket får den att börja åka ner
 
-            attacktimer = 0; //nollställer räknaren. 
+                attacktimer = 0; //nollställer räknaren. 
+            }
+            else
+            {
+                attacktimer = Random.Range(0,attackintervall - 1);
+            }
+           
         }
     }
 
-    public void dead()
+    public void Dead()
     {
-        Instantiate(deadparticle, transform.position, Quaternion.identity);
+        ScoreManager.current.AddScorePoints(pointValue, transform.position);
+       //Instantiate(deadparticle, transform.position, Quaternion.identity);
+        Destroy(gameObject);
     }
 }

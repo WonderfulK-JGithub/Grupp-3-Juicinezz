@@ -25,8 +25,5 @@ public class FiendeScript : GrunderFiender
         }
     }
 
-    private void OnDestroy()
-    {
-        base.dead();
-    }
+    
 }

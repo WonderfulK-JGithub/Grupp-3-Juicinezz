@@ -21,14 +21,17 @@ public class SkjutandeFiendeScript : GrunderFiender
 
         if (attacktimer > attackintervall)
         {
-            Instantiate(Kula, FiendeBody.position, Quaternion.identity);
+            if(Random.Range(0,2) == 0)
+            {
+                Instantiate(Kula, FiendeBody.position, Quaternion.identity);
 
-            attacktimer = 0;
+                attacktimer = 0;
+            }
+            else
+            {
+                attacktimer = Random.Range(0, attackintervall - 1);
+            }
+            
         }
-    }
-
-    private void OnDestroy()
-    {
-        base.dead();
     }
 }
