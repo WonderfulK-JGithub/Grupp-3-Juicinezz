@@ -12,11 +12,11 @@ public class Iwillnotdie : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-           //Gör spelaren odödlig + spela en odölig animation ungefär som mario.
-
-           // Instantiate(ShieldCreate, collision.transform.position + new Vector3(0, 0, 0), ShieldCreate.transform.rotation);
+           
+            collision.gameObject.GetComponent<Ship>().invincibility = true;
+           
             Destroy(gameObject);
-        }//om denna krockar med ett gameobjekt med tag Player så         och sedan dör. Mattias.
+        }//om denna krockar med ett gameobjekt med tag Player så aktiveras boolen invincibility på spelaren och sedan dör. Mattias.
     }
 }
 

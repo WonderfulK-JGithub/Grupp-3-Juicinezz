@@ -12,7 +12,7 @@ public class Speedup : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-          //  player speed +(speed * 2);
+            collision.gameObject.GetComponent<Ship>().HitTheGas = true;
             Destroy(gameObject);
         }//om denna krockar med ett gameobjekt med tag Player så skapar             och sedan dör. Mattias.
     }

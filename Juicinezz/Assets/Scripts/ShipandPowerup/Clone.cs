@@ -22,6 +22,6 @@ public class Clone : MonoBehaviour
               Instantiate(CloneCreate, collision.transform.position + new Vector3(-2, -2, 0), CloneCreate.transform.rotation);
             }
             Destroy(gameObject);
-        }//om denna krockar med ett gameobjekt med tag Player så skapar den clonen och sedan dör. Mattias.
+        }//om denna krockar med ett gameobjekt med tag Player så skapar den clonen på en ut av två platser och sedan dör. Mattias.
     }
 }
