@@ -12,6 +12,7 @@ public class Clone : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            SoundManagerScript.PlaySound("1Up"); //Spelar powerup ljudet /Theo
             int random = Random.Range(0,2);
             if(random == 0)
             {
