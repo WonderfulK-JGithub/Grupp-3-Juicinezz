@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7231206544288943431}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.59, y: 38.2, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -102,6 +102,10 @@ MonoBehaviour:
   deadparticle: {fileID: 6960234309039682027, guid: e89c623e5ef4fc84a93dffe74fd85527, type: 3}
   enemySpeed: {x: 2.5, y: 1}
   pointValue: 69
+  isAttacking: 0
+  targetRotation: 0
+  currentRotation: 0
+  rotationSpeed: 5
 --- !u!212 &7231206544288943448
 SpriteRenderer:
   m_ObjectHideFlags: 0
