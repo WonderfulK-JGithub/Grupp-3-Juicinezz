@@ -88,7 +88,7 @@ public class GrunderFiender : MonoBehaviour
         }
     }
 
-    public void Dead()
+    public virtual void Dead()
     {
         ScoreManager.current.AddScorePoints(pointValue, transform.position);//lägger till poäng
         Instantiate(deadparticle, transform.position, Quaternion.identity);//skapar explotionen

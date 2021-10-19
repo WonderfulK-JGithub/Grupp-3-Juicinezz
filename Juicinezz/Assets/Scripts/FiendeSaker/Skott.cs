@@ -14,7 +14,7 @@ public class Skott : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        bullet.velocity = new Vector2(0, -5);
+        bullet.velocity = new Vector2(5*transform.up.x, 5*transform.up.y);
 
         if (transform.position.y < -5)
         {

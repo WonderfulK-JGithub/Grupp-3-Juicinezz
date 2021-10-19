@@ -23,7 +23,7 @@ public class SkjutandeFiendeScript : GrunderFiender
         {
             if(Random.Range(0,2) == 0)
             {
-                Instantiate(Kula, FiendeBody.position, Quaternion.identity);
+                Instantiate(Kula, FiendeBody.position, Quaternion.Euler(new Vector3(0,0,180)));
 
                 attacktimer = 0;
             }
