@@ -12,7 +12,7 @@ public class Clone : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            SoundManagerScript.PlaySound("1Up"); //Spelar powerup ljudet /Theo
+          //  SoundManagerScript.PlaySound("1Up"); //Spelar powerup ljudet /Theo
             int random = Random.Range(0,2);
             if(random == 0)
             {
@@ -23,6 +23,6 @@ public class Clone : MonoBehaviour
               Instantiate(CloneCreate, collision.transform.position + new Vector3(-2, -2, 0), CloneCreate.transform.rotation);
             }
             Destroy(gameObject);
-        }//om denna krockar med ett gameobjekt med tag Player så skapar den clonen på en ut av två platser och sedan dör. Mattias.
+        }//om denna krockar med ett gameobjekt med tag Player så skapar den clonen på en ut av två platser och sedan dör den. Mattias.
     }
 }

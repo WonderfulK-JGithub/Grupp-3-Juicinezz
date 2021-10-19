@@ -5,7 +5,6 @@ using UnityEngine;
 public class Iwillnotdie : MonoBehaviour
 {
     public GameObject player;
-    public GameObject ShieldCreate;
 
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -16,7 +15,7 @@ public class Iwillnotdie : MonoBehaviour
             collision.gameObject.GetComponent<Ship>().invincibility = true;
            
             Destroy(gameObject);
-        }//om denna krockar med ett gameobjekt med tag Player så aktiveras boolen invincibility på spelaren och sedan dör. Mattias.
+        }//om denna krockar med ett gameobjekt med tag Player så aktiveras boolen invincibility på spelaren och sedan dör den. Mattias.
     }
 }
 
