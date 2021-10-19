@@ -77,7 +77,6 @@ public class EnemySpawner : MonoBehaviour
         }
         else
         {
-            print("aha");
             waitTimer -= Time.deltaTime;
             if(waitTimer <= 0f)
             {
@@ -177,6 +176,7 @@ public class EnemySpawner : MonoBehaviour
 
     public void EnemyDead(float enemyYStartPosition)
     {
-        rowAmount[Mathf.FloorToInt(enemyYStartPosition - firstRowPos) -1]--;
+        print(Mathf.FloorToInt(enemyYStartPosition - firstRowPos));
+        rowAmount[Mathf.FloorToInt(enemyYStartPosition - firstRowPos)]--;
     }
 }
