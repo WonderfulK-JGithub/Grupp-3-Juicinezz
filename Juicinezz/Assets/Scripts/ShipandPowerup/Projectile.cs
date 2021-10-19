@@ -11,6 +11,15 @@ public class Projectile : MonoBehaviour
         rb.velocity = transform.up * speed;
     }//Gör så att projectile sjuter rakt upp. Mattias.
 
+    private void Update()
+    {
+        if (transform.position.y > 8)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -24,6 +33,9 @@ public class Projectile : MonoBehaviour
         if (collision.tag == "Fiende")
         {
             collision.GetComponent<GrunderFiender>().Dead();
+
+            Destroy(gameObject);
         }
+
     }
 }

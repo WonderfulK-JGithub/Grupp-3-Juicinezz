@@ -109,7 +109,7 @@ MonoBehaviour:
   isAttacking: 0
   targetRotation: 0
   currentRotation: 0
-  rotationSpeed: 0
+  rotationSpeed: 5
   projektil: {fileID: 8986943990919510993, guid: 8cd30a5279806c847a38a91e963d51f6, type: 3}
   skjutintervall: 5
   skjuttimer: 0
