@@ -5,11 +5,13 @@ public class Blaster : MonoBehaviour
     public Transform FirePoint;
     public GameObject projectilePrefab;
     float Timer;
-    float shootSpeed = 0.5f;
-    float ssppppeeeeed = 1;
+    public bool LetsButtonMash = false;
+    float countDown = 8;
+    float shootCooldown = 0.2f;
+    float cooldownTimer = 0;
     private void Start()
     {
-        //  Timer += Time.deltaTime;
+       
     }
 
     void Update()
@@ -19,12 +21,22 @@ public class Blaster : MonoBehaviour
             Shoot();
         }
 
-        /*  if (Input.GetButtonDown("Fire1") && Timer> shootSpeed*ssppppeeeeed)
+        if (LetsButtonMash)
         {
-            Shoot();
-            Timer = 0;
-        }*/ //Om du trycker på en knapp registrerad som "Fire1" så skapar den en projectile. Mattias.
+            cooldownTimer += Time.deltaTime;
+            if (shootCooldown <= cooldownTimer)
+            {
+                Shoot();
+                cooldownTimer = 0;
+            }
 
+            Timer += Time.deltaTime;
+            if (Timer >= countDown)
+            {
+                LetsButtonMash = false;
+            }
+        }
+   
     }
     void Shoot()
     {

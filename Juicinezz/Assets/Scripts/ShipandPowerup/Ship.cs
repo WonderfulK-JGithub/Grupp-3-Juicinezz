@@ -1,10 +1,10 @@
 using UnityEngine;
 
 public class Ship : MonoBehaviour
-{
-    [SerializeField]
-    float speed = 5;
-    float HP = 1;
+{  
+   public float baseSpeed =10;
+   public float speed;
+   float HP = 1;
 
     Animator anim;
     public bool invincibility = false;
@@ -13,10 +13,12 @@ public class Ship : MonoBehaviour
 
     public bool HitTheGas;
     public float slowcountDown = 15;
-    float speedtimer;
+    public float speedtimer;
+    
     void Start()
     {
         anim = GetComponent<Animator>();
+        speed = baseSpeed;
     }
 
 
@@ -55,12 +57,12 @@ public class Ship : MonoBehaviour
         }
         if (HitTheGas)
         {
-           speed *= 2;
+           speed = baseSpeed *2;
             
             speedtimer += Time.deltaTime;
             if (speedtimer >= slowcountDown)
             {
-              speed /= 2;
+              speed = baseSpeed;
                 speedtimer = 0;
                 HitTheGas = false;
             }
