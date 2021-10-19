@@ -177,6 +177,6 @@ public class EnemySpawner : MonoBehaviour
 
     public void EnemyDead(float enemyYStartPosition)
     {
-        rowAmount[(int)(enemyYStartPosition - firstRowPos) - 1]--;
+        rowAmount[Mathf.FloorToInt(enemyYStartPosition - firstRowPos) -1]--;
     }
 }
