@@ -63,3 +63,4 @@ public class SoundManagerScript : MonoBehaviour
         }
     }
 }
+// För att spela ljuden SoundManagerScript.PlaySound ("InsertName"); /Theo

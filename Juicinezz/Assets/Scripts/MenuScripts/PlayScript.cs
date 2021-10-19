@@ -7,5 +7,6 @@ public class PlayScript : MonoBehaviour
     void Update()
     {
         Application.LoadLevel(1);
+        SoundManagerScript.PlaySound("Start");
     }
 }
