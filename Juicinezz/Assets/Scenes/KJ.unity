@@ -639,6 +639,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  invincibility: 0
+  countDown: 5
+  HitTheGas: 0
+  slowcountDown: 15
 --- !u!61 &314755218
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1061,9 +1065,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39d9673b3fa27e34fa7c672d699ff26c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 1803835879788504461, guid: 3a6004808ee40db44aff73fcb4fbb8cc, type: 3}
+  enemyPrefabs:
+  - {fileID: 7231206544288943431, guid: c589cd87b890a514381869c8647af50f, type: 3}
+  - {fileID: 1803835879788504461, guid: 3a6004808ee40db44aff73fcb4fbb8cc, type: 3}
+  - {fileID: 5325379774076666485, guid: 8812fd6c41d0c524cb3b00adeb24123a, type: 3}
   spawnIntervalTime: 0.5
+  spawnCallTime: 5
   spawnCords: {x: -9, y: -5, z: 0}
+  maxPerRow: 5
+  diveEnemyOdds: 6
+  shootEnemyOdds: 3
+  strongEnemyOdds: 1
 --- !u!1 &538002001
 GameObject:
   m_ObjectHideFlags: 0

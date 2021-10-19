@@ -37,9 +37,9 @@ public class GrunderFiender : MonoBehaviour
         FiendeBody.velocity = new Vector2(enemySpeed.x * direction, (transform.position.y - verticalstartpos) * VerticalDirection * enemySpeed.y); //multiplicerar hastigheten med riktningen så att den färdas i rätt riktning
         // Y axeln håller objektet stilla om den är vid starthöjden av objektet, om den sedan flyttas lite neråt så kommer den att fortsätta i den riktningen och vänds om vid kanten av skärmen.
 
-        if (transform.position.y > verticalstartpos - 0.2 && VerticalDirection == -1) transform.position = new Vector3(transform.position.x, verticalstartpos, 0f); //om den är nära sin verticalstartpos och ska uppåt placeras den där automatikst.
+        
 
-        if(transform.position.y == verticalstartpos)
+        if(transform.position.y >= verticalstartpos - 0.2)
         {
             targetRotation = 0f;//ändrar vilken rotation fienden ska ha
         }
@@ -93,5 +93,7 @@ public class GrunderFiender : MonoBehaviour
         ScoreManager.current.AddScorePoints(pointValue, transform.position);//lägger till poäng
         Instantiate(deadparticle, transform.position, Quaternion.identity);//skapar explotionen
         Destroy(gameObject); //tar bort fiende objektet
+
+        EnemySpawner.current.EnemyDead(verticalstartpos);
     }
 }

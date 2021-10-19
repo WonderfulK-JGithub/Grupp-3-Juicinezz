@@ -99,7 +99,7 @@ MonoBehaviour:
   attacktimer: 0
   attackintervall: 10
   verticalstartpos: 4
-  deadparticle: {fileID: 6960234309039682027, guid: e89c623e5ef4fc84a93dffe74fd85527, type: 3}
+  deadparticle: {fileID: 3832211732124252314, guid: 9137244aad2e28a4e81f54663d9da48b, type: 3}
   enemySpeed: {x: 2.5, y: 1}
   pointValue: 69
   isAttacking: 0
