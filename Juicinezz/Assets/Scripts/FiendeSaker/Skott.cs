@@ -6,9 +6,10 @@ public class Skott : MonoBehaviour
 {
     public Rigidbody2D bullet;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         bullet = GetComponent<Rigidbody2D>();
+        SoundManagerScript.PlaySound("OppShoot");
     }
 
     // Update is called once per frame

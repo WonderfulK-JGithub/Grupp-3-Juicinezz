@@ -93,6 +93,7 @@ public class GrunderFiender : MonoBehaviour
         ScoreManager.current.AddScorePoints(pointValue, transform.position);//lägger till poäng
         Instantiate(deadparticle, transform.position, Quaternion.identity);//skapar explotionen
         Destroy(gameObject); //tar bort fiende objektet
+        SoundManagerScript.PlaySound("Kill");
 
         EnemySpawner.current.EnemyDead(verticalstartpos);
     }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SoundManagerScript : MonoBehaviour
 {
-    public static AudioClip Damage, GameDeath, KillSound, LobbyClick, PowerUp, Shoot, StartRound, Explosion, SpeedBoost; //Definerar som audiclip /Theo
+    public static AudioClip Damage, GameDeath, KillSound, LobbyClick, PowerUp, Shoot, StartRound, Explosion, SpeedBoost, EnemyShoot; //Definerar som audiclip /Theo
     static AudioSource audioSrc;
 
 
@@ -21,6 +21,7 @@ public class SoundManagerScript : MonoBehaviour
         StartRound = Resources.Load<AudioClip>("Start");
         Explosion = Resources.Load<AudioClip>("Explosion");
         SpeedBoost = Resources.Load<AudioClip>("Speed");
+        EnemyShoot = Resources.Load<AudioClip>("OppShoot");
 
         audioSrc = GetComponent<AudioSource>();
     }
@@ -59,6 +60,9 @@ public class SoundManagerScript : MonoBehaviour
                 break;
             case "Speed":
                 audioSrc.PlayOneShot(SpeedBoost);
+                break;
+            case "OppShot":
+                audioSrc.PlayOneShot(EnemyShoot);
                 break;
         }
     }
