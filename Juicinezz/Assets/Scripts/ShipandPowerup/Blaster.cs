@@ -29,6 +29,7 @@ public class Blaster : MonoBehaviour
             if (Timer >= countDown)
             {
                 LetsButtonMash = false;
+                Timer = 0;
             }
         }
    

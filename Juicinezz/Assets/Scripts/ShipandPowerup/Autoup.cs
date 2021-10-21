@@ -10,7 +10,7 @@ public class Autoup : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-          //  gameObject.GetComponent<FirePoint>().LetsButtonMash = true;
+            collision.gameObject.GetComponent<Ship>().blast.LetsButtonMash = true;
             Destroy(gameObject);
         }
     }

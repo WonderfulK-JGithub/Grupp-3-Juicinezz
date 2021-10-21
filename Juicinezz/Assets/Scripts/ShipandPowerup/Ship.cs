@@ -16,11 +16,13 @@ public class Ship : MonoBehaviour
     public float speedtimer;
 
     public static Ship current;
+    public Blaster blast;
     
     void Start()
     {
         current = this;
         speed = baseSpeed;
+        blast = GetComponentInChildren<Blaster>();
     }
 
 
@@ -35,7 +37,7 @@ public class Ship : MonoBehaviour
         {
             transform.position += new Vector3(0, -speed, 0) * Time.deltaTime;
         }
-        int dir = 0;
+        int dir = 0; // Styr animatorn.
         if (Input.GetKey(KeyCode.A))
         {
             transform.position += new Vector3(-speed, 0, 0) * Time.deltaTime;
@@ -49,7 +51,7 @@ public class Ship : MonoBehaviour
         }
 
         anim.SetInteger("Dir", dir);
-        if(invincibility)
+        if(invincibility) //Gör spelaren odödlig en liten stund och spelar en animation. Mattias.
         {
             anim.Play("Ship_Invincible");
 
