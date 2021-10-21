@@ -56,7 +56,20 @@ public class Ship : MonoBehaviour
             timer += Time.deltaTime;
             if (timer >= countDown)
             {
-                anim.Play("Ship_idle");
+                
+                if(HP == 3)
+                {
+                    anim.Play("Ship_idle");
+                }
+                else if (HP == 2)
+                {
+                    anim.Play("Ship_Hurt1");
+                }
+                else if (HP == 1)
+                {
+                    anim.Play("Ship_Hurt2");
+                }
+
                 timer = 0;
                 invincibility = false;
             }
@@ -81,10 +94,20 @@ public class Ship : MonoBehaviour
         {
             HP -= damage;
 
-            if (HP <= 0)
+            if(HP == 2)
+            {
+                anim.Play("Ship_Hurt1");
+            }
+            else if(HP == 1)
+            {
+                anim.Play("Ship_Hurt2");
+            }
+            else if (HP <= 0)
             {
                 Destroy(gameObject);
             }
+
+            CameraController.current.ScreenShake();
         }
         
 

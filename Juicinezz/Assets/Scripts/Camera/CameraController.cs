@@ -3,12 +3,19 @@ using UnityEngine;
 //av K-J
 public class CameraController : MonoBehaviour
 {
+    public static CameraController current = null;
+
     [SerializeField,Range(0f,0.2f)] float shakeMagnitude = 0f; //hur stark screenshaken ska vara
     [SerializeField,Range(0.2f,0.6f)] float shakeTime = 0f;//hur länge den ska vara
 
     float timer = 0f;//timer som håller koll på när screenshaken ska sluta
     float power = 0f;//hur mycket positionen kan ändras
     float powerReduction = 0f;//hur mycket mindre power man ska få varje sekund
+
+    private void Awake()
+    {
+        current = this;
+    }
 
     void FixedUpdate()
     {
