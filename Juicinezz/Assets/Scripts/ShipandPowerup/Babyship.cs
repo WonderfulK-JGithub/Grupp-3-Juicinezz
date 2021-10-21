@@ -20,6 +20,8 @@ public class Babyship : Ship
         {
             Destroy(gameObject);
         }
+
+        
         //Efter att ha skapats sätter den timer på 15 sec sedan dör den. Mattias.
 
        /* if (HitTheGas)

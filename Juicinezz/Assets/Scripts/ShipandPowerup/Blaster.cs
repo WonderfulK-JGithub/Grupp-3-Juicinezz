@@ -9,11 +9,6 @@ public class Blaster : MonoBehaviour
     float countDown = 8;
     float shootCooldown = 0.2f;
     float cooldownTimer = 0;
-    private void Start()
-    {
-       
-    }
-
     void Update()
     {
         if (Input.GetButtonDown("Fire1"))

@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class Ship : MonoBehaviour
 {  
-   public float baseSpeed =10;
-   public float speed;
-   float HP = 1;
+   public static float baseSpeed =10;
+   public static float speed;
+   public float HP = 3;
 
-    Animator anim;
+   public Animator anim;
     public bool invincibility = false;
     public float countDown = 5;
     float timer;
@@ -14,10 +14,12 @@ public class Ship : MonoBehaviour
     public bool HitTheGas;
     public float slowcountDown = 15;
     public float speedtimer;
+
+    public static Ship current;
     
     void Start()
     {
-        anim = GetComponent<Animator>();
+        current = this;
         speed = baseSpeed;
     }
 
@@ -33,24 +35,28 @@ public class Ship : MonoBehaviour
         {
             transform.position += new Vector3(0, -speed, 0) * Time.deltaTime;
         }
-
+        int dir = 0;
         if (Input.GetKey(KeyCode.A))
         {
             transform.position += new Vector3(-speed, 0, 0) * Time.deltaTime;
+            dir -= 1;
         }
 
         if (Input.GetKey(KeyCode.D))
         {
             transform.position += new Vector3(speed, 0, 0) * Time.deltaTime;
+            dir += 1;
         }
+
+        anim.SetInteger("Dir", dir);
         if(invincibility)
         {
-            anim.SetBool("Invicible", true);
+            anim.Play("Ship_Invincible");
 
             timer += Time.deltaTime;
             if (timer >= countDown)
             {
-                anim.SetBool("Invicible", false);
+                anim.Play("Ship_idle");
                 timer = 0;
                 invincibility = false;
             }

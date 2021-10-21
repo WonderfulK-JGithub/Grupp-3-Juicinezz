@@ -45,6 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FirePoint: {fileID: 3234272347964799040}
   projectilePrefab: {fileID: 5663850366175606009, guid: 0bac16b8769ffb44b8156258a8c10a5e, type: 3}
+  LetsButtonMash: 0
 --- !u!1 &3234272348240366581
 GameObject:
   m_ObjectHideFlags: 0
@@ -59,6 +60,7 @@ GameObject:
   - component: {fileID: 3234272348240366579}
   - component: {fileID: 3234272348240366578}
   - component: {fileID: 8348477456476439052}
+  - component: {fileID: -441200485698717506}
   m_Layer: 0
   m_Name: Baby ship
   m_TagString: Untagged
@@ -189,5 +191,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97d60f4d3d8b4724d8f324e66b9338c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  anim: {fileID: -441200485698717506}
+  invincibility: 0
   countDown: 15
+  HitTheGas: 0
+  slowcountDown: 15
+  speedtimer: 0
+  CountDown: 15
+--- !u!95 &-441200485698717506
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3234272348240366581}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
