@@ -21,6 +21,7 @@ public class EnemySpawner : MonoBehaviour
 
     int currentEnemy = 0;
     int spawnCount = 0;
+    int spawnDirection = 1;
     float spawnTimer = 0f;
     float waitTimer = 0f;
 
@@ -37,7 +38,8 @@ public class EnemySpawner : MonoBehaviour
             spawnTimer -= Time.deltaTime;
             if(spawnTimer <= 0f)
             {
-                GrunderFiender enemy = Instantiate(enemyPrefabs[currentEnemy], spawnCords, Quaternion.identity).GetComponent<GrunderFiender>();
+                GrunderFiender enemy = Instantiate(enemyPrefabs[currentEnemy], new Vector3(spawnCords.x * spawnDirection,spawnCords.y,0f), Quaternion.identity).GetComponent<GrunderFiender>();
+                enemy.direction = spawnDirection;
 
                 switch(currentEnemy)
                 {
@@ -90,6 +92,7 @@ public class EnemySpawner : MonoBehaviour
     public void SpawnEnemySet(int enemyAmount)
     {
         currentEnemy = RandomEnemy();
+        spawnDirection = Random.Range(0, 2) == 0 ? 1 : -1;
 
         if(currentEnemy != -1)
         {

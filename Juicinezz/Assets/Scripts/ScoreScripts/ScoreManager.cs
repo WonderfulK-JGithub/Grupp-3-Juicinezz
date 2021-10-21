@@ -20,9 +20,13 @@ public class ScoreManager : MonoBehaviour
     public int score = 0; //score
 
     public static ScoreManager current = null;
+
+    Animator anim = null;
+
     private void Awake()
     {
         current = this;
+        anim = GetComponent<Animator>();
         currentLeaderBoard = SaveSystem.Load().leaderBoard;
     }
     
@@ -62,7 +66,7 @@ public class ScoreManager : MonoBehaviour
         Destroy(newText, enemyScoreTime); //tar bort texten efter en viss tid
     }
 
-    /// <summary> Uppdaterar leaderboarden </summary>
+    /// <summary> Uppdaterar leaderboar texten </summary>
     public void UpdateLeaderboard()
     {
         for (int i = 0; i < currentLeaderBoard.Count; i++)
@@ -131,5 +135,12 @@ public class ScoreManager : MonoBehaviour
         SaveData newSave = new SaveData();
         newSave.leaderBoard = currentLeaderBoard;
         SaveSystem.Save(newSave);
+    }
+
+    public void GameOver()//sker när spelet är över
+    {
+        anim.Play("Game_Over");
+        NewContender();
+        SaveLeaderboard();
     }
 }
