@@ -27,7 +27,7 @@ public class Skott : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            print("ded");
+            Ship.current.TakeDamage(1);
         }
     }
 }
