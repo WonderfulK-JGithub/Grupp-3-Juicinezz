@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1803835879788504463}
   - component: {fileID: 1803835879788504462}
   - component: {fileID: 1803835879788504457}
+  - component: {fileID: 1170655442643799690}
   m_Layer: 0
   m_Name: SkjutFiende
   m_TagString: Fiende
@@ -102,6 +103,10 @@ MonoBehaviour:
   deadparticle: {fileID: 3832211732124252314, guid: 9137244aad2e28a4e81f54663d9da48b, type: 3}
   enemySpeed: {x: 2.5, y: 1}
   pointValue: 0
+  isAttacking: 0
+  targetRotation: 0
+  currentRotation: 0
+  rotationSpeed: 0
   Kula: {fileID: 8986943990919510993, guid: 8cd30a5279806c847a38a91e963d51f6, type: 3}
 --- !u!212 &1803835879788504457
 SpriteRenderer:
@@ -154,3 +159,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1170655442643799690
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1803835879788504461}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 69ef6f8271da2d04d99510d38e6a13a3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

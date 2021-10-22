@@ -21,9 +21,12 @@ public class GrunderFiender : MonoBehaviour
     public float currentRotation;
     public float rotationSpeed;
 
+    Animator anim;
+
     // Start is called before the first frame update
     public void setup()
     {
+        anim = GetComponent<Animator>();
         print("yes");
         FiendeBody = GetComponent<Rigidbody2D>();
     }
@@ -92,9 +95,18 @@ public class GrunderFiender : MonoBehaviour
     {
         ScoreManager.current.AddScorePoints(pointValue, transform.position);//lägger till poäng
         Instantiate(deadparticle, transform.position, Quaternion.identity);//skapar explotionen
-        Destroy(gameObject); //tar bort fiende objektet
+        //Destroy(gameObject); //tar bort fiende objektet
+        anim.SetTrigger("Die");
+        this.enabled = false;
+        FiendeBody.velocity = Vector2.zero;
+
         SoundManagerScript.PlaySound("Kill");
 
         EnemySpawner.current.EnemyDead(verticalstartpos);
+    }
+
+    void DestroyThis()
+    {
+        Destroy(gameObject);
     }
 }

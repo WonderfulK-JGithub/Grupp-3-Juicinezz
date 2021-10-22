@@ -1,43 +1,49 @@
 fileFormatVersion: 2
-guid: 79f6b1fdc057ad74a96ebb5f8dcd514c
+guid: 393369fc8c4d39443b7350e4c00d3d20
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8334855865074418800
-    second: explosion-Sheet_0
+      213: -1071392623188944932
+    second: fiende_exploderar_1_0
   - first:
-      213: 3206615041757511720
-    second: explosion-Sheet_1
+      213: -7165911175950868872
+    second: fiende_exploderar_1_1
   - first:
-      213: 3927885074643360825
-    second: explosion-Sheet_2
+      213: 5600715214058337729
+    second: fiende_exploderar_1_2
   - first:
-      213: 3967493871192301097
-    second: explosion-Sheet_3
+      213: -6749384463726066745
+    second: fiende_exploderar_1_3
   - first:
-      213: -8271988938590099505
-    second: explosion-Sheet_4
+      213: -6489143869742020559
+    second: fiende_exploderar_1_4
   - first:
-      213: 744773361678982964
-    second: explosion-Sheet_5
+      213: 7194925696781888773
+    second: fiende_exploderar_1_5
   - first:
-      213: -8214989258514109011
-    second: explosion-Sheet_6
+      213: 1397453827213002924
+    second: fiende_exploderar_1_6
   - first:
-      213: 7947203113725667511
-    second: explosion-Sheet_7
+      213: 4856426148488076876
+    second: fiende_exploderar_1_7
   - first:
-      213: 6538621632521163712
-    second: explosion-Sheet_8
+      213: -359368927109596297
+    second: fiende_exploderar_1_8
   - first:
-      213: 5899307184810280105
-    second: explosion-Sheet_9
+      213: -4729921796614621892
+    second: fiende_exploderar_1_9
   - first:
-      213: -1937960364587855871
-    second: explosion-Sheet_10
+      213: 1198609333541562562
+    second: fiende_exploderar_1_10
   - first:
-      213: 8404117684291413880
-    second: explosion-Sheet_11
+      213: -2858649807325371491
+    second: fiende_exploderar_1_11
+  - first:
+      213: 6475822050628109600
+    second: fiende_exploderar_1_12
+  - first:
+      213: 4501235326285403254
+    second: fiende_exploderar_1_13
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -82,7 +88,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 128
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -127,7 +133,238 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: explosion-Sheet_0
+      name: fiende_exploderar_1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 416
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd759dfe516a121f0800000000000000
+      internalID: -1071392623188944932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fiende_exploderar_1_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87e527980c19d8c90800000000000000
+      internalID: -7165911175950868872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fiende_exploderar_1_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 352
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c5b21630dcb9bd40800000000000000
+      internalID: 5600715214058337729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fiende_exploderar_1_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 320
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c3411b079e5552a0800000000000000
+      internalID: -6749384463726066745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fiende_exploderar_1_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 288
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1388f9b080ee1f5a0800000000000000
+      internalID: -6489143869742020559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fiende_exploderar_1_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50da3060dc289d360800000000000000
+      internalID: 7194925696781888773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fiende_exploderar_1_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca88a011ad0c46310800000000000000
+      internalID: 1397453827213002924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fiende_exploderar_1_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4edc820add756340800000000000000
+      internalID: 4856426148488076876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fiende_exploderar_1_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77bb1546dd3430bf0800000000000000
+      internalID: -359368927109596297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fiende_exploderar_1_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c357869af21fb5eb0800000000000000
+      internalID: -4729921796614621892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fiende_exploderar_1_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c8663e96d052a010800000000000000
+      internalID: 1198609333541562562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fiende_exploderar_1_11
       rect:
         serializedVersion: 2
         x: 0
@@ -141,77 +378,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 07487d3df3b5ba370800000000000000
-      internalID: 8334855865074418800
+      spriteID: d93e12165290458d0800000000000000
+      internalID: -2858649807325371491
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosion-Sheet_1
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 820816f146f208c20800000000000000
-      internalID: 3206615041757511720
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: explosion-Sheet_2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 93c1da02aa6a28630800000000000000
-      internalID: 3927885074643360825
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: explosion-Sheet_3
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 92ed4f8b7ae5f0730800000000000000
-      internalID: 3967493871192301097
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: explosion-Sheet_4
+      name: fiende_exploderar_1_12
       rect:
         serializedVersion: 2
         x: 0
@@ -225,77 +399,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fc7606123edf33d80800000000000000
-      internalID: -8271988938590099505
+      spriteID: 025845c38ddbed950800000000000000
+      internalID: 6475822050628109600
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosion-Sheet_5
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 43f9c0d2d67f55a00800000000000000
-      internalID: 744773361678982964
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: explosion-Sheet_6
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: daded945bce7efd80800000000000000
-      internalID: -8214989258514109011
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: explosion-Sheet_7
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7b82f7730232a4e60800000000000000
-      internalID: 7947203113725667511
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: explosion-Sheet_8
+      name: fiende_exploderar_1_13
       rect:
         serializedVersion: 2
         x: 0
@@ -309,71 +420,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0c3db1f4bb9ddba50800000000000000
-      internalID: 6538621632521163712
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: explosion-Sheet_9
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9a4c683f0ac8ed150800000000000000
-      internalID: 5899307184810280105
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: explosion-Sheet_10
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 10054ffe05bfa15e0800000000000000
-      internalID: -1937960364587855871
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: explosion-Sheet_11
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 877a4c6c18c61a470800000000000000
-      internalID: 8404117684291413880
+      spriteID: 6745ea14ea9977e30800000000000000
+      internalID: 4501235326285403254
       vertices: []
       indices: 
       edges: []

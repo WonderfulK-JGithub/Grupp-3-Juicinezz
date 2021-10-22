@@ -107,11 +107,21 @@ public class Ship : MonoBehaviour
             else if (HP <= 0)
             {
                 Destroy(gameObject);
+                ScoreManager.current.GameOver();
             }
 
             CameraController.current.ScreenShake();
         }
         
 
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.CompareTag("Fiende"))
+        {
+            Destroy(collision.gameObject);
+            TakeDamage(1);
+        }
     }
 }

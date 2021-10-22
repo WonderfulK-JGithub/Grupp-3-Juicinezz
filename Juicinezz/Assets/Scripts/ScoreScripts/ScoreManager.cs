@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 
 //av K-J
@@ -142,5 +143,14 @@ public class ScoreManager : MonoBehaviour
         anim.Play("Game_Over");
         NewContender();
         SaveLeaderboard();
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+    public void MainMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 }
