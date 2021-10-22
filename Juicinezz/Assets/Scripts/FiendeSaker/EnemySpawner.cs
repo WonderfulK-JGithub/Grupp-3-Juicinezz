@@ -32,61 +32,65 @@ public class EnemySpawner : MonoBehaviour
 
     private void Update()
     {
-        if(spawnCount > 0)
+        if(ScoreManager.current.gameIsOngoing)
         {
-            
-            spawnTimer -= Time.deltaTime;
-            if(spawnTimer <= 0f)
+            if (spawnCount > 0)
             {
-                GrunderFiender enemy = Instantiate(enemyPrefabs[currentEnemy], new Vector3(spawnCords.x * spawnDirection,spawnCords.y,0f), Quaternion.identity).GetComponent<GrunderFiender>();
-                enemy.direction = spawnDirection;
 
-                switch(currentEnemy)
+                spawnTimer -= Time.deltaTime;
+                if (spawnTimer <= 0f)
                 {
-                    case 0:
-                        if (rowAmount[0] < maxPerRow)
-                        {
-                            enemy.verticalstartpos = firstRowPos;
-                            rowAmount[0]++;
-                        }
-                        else
-                        {
-                            enemy.verticalstartpos = firstRowPos + 1;
-                            rowAmount[1]++;
-                        }
-                        break;
-                    case 1:
-                        if (rowAmount[2] < maxPerRow)
-                        {
-                            enemy.verticalstartpos = firstRowPos + 2;
-                            rowAmount[2]++;
-                        }
-                        else
-                        {
-                            enemy.verticalstartpos = firstRowPos + 3;
-                            rowAmount[3]++;
-                        }
-                        break;
-                    case 2:
-                        enemy.verticalstartpos = firstRowPos + 4;
-                        rowAmount[4]++;
-                        break;
+                    GrunderFiender enemy = Instantiate(enemyPrefabs[currentEnemy], new Vector3(spawnCords.x * spawnDirection, spawnCords.y, 0f), Quaternion.identity).GetComponent<GrunderFiender>();
+                    enemy.direction = spawnDirection;
+
+                    switch (currentEnemy)
+                    {
+                        case 0:
+                            if (rowAmount[0] < maxPerRow)
+                            {
+                                enemy.verticalstartpos = firstRowPos;
+                                rowAmount[0]++;
+                            }
+                            else
+                            {
+                                enemy.verticalstartpos = firstRowPos + 1;
+                                rowAmount[1]++;
+                            }
+                            break;
+                        case 1:
+                            if (rowAmount[2] < maxPerRow)
+                            {
+                                enemy.verticalstartpos = firstRowPos + 2;
+                                rowAmount[2]++;
+                            }
+                            else
+                            {
+                                enemy.verticalstartpos = firstRowPos + 3;
+                                rowAmount[3]++;
+                            }
+                            break;
+                        case 2:
+                            enemy.verticalstartpos = firstRowPos + 4;
+                            rowAmount[4]++;
+                            break;
+                    }
+
+                    spawnCount--;
+                    spawnTimer = spawnIntervalTime;
                 }
-
-                spawnCount--;
-                spawnTimer = spawnIntervalTime;
             }
-        }
-        else
-        {
-            waitTimer -= Time.deltaTime;
-            if(waitTimer <= 0f)
+            else
             {
-                SpawnEnemySet(10);
+                waitTimer -= Time.deltaTime;
+                if (waitTimer <= 0f)
+                {
+                    SpawnEnemySet(10);
 
-                waitTimer = spawnCallTime;
+                    waitTimer = spawnCallTime;
+                }
             }
         }
+        
     }
 
     public void SpawnEnemySet(int enemyAmount)

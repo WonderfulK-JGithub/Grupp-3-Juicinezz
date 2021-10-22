@@ -12,7 +12,8 @@ public class ScoreManager : MonoBehaviour
 
     [Header("WriteName")]
     [SerializeField] GameObject writeNameParent = null;//parenten för all UI kopplat till att skriva sitt namn
-    [SerializeField] TMP_InputField inputField; //inputfieldet som man skriver sitt spelarnamn i
+    [SerializeField] TMP_InputField inputField = null; //inputfieldet som man skriver sitt spelarnamn i
+    [SerializeField] int characterLimit = 0;//hur långt ett namn får vara
 
     [Header("LeaderBoard")]
     [SerializeField] GameObject leaderboardParent = null;//parenten för all UI kopplat till leaderboarden
@@ -21,6 +22,7 @@ public class ScoreManager : MonoBehaviour
     public int score = 0; //score
 
     public static ScoreManager current = null;
+    public bool gameIsOngoing = false;
 
     Animator anim = null;
 
@@ -29,8 +31,13 @@ public class ScoreManager : MonoBehaviour
         current = this;
         anim = GetComponent<Animator>();
         currentLeaderBoard = SaveSystem.Load().leaderBoard;
+
+        
     }
-    
+    void Update()
+    {
+        inputField.Select();
+    }
 
     [Header("Text")]
     [SerializeField] TextMeshProUGUI scoreText = null; //texten som visar poängen
@@ -121,13 +128,21 @@ public class ScoreManager : MonoBehaviour
 
     public void OnChangedName()//när man skriver en karaktär i input fieldet sker detta
     {
-        playerName = inputField.text;
+        if(inputField.text.Length <= characterLimit)
+        {
+            playerName = inputField.text;
+        }
+        else
+        {
+            inputField.text = playerName;
+        }
     }
 
     public void NameReady() //när man är klar med sitt namn
     {
         nameText.text = playerName;
         writeNameParent.SetActive(false);
+        gameIsOngoing = true;
     }
 
     public void SaveLeaderboard()//sparar den nuvarande leaderboarden
@@ -143,6 +158,7 @@ public class ScoreManager : MonoBehaviour
         anim.Play("Game_Over");
         NewContender();
         SaveLeaderboard();
+        gameIsOngoing = false;
     }
 
     public void Restart()
