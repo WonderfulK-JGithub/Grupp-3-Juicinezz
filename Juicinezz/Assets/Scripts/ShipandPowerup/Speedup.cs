@@ -14,6 +14,6 @@ public class Speedup : MonoBehaviour
         {
             collision.gameObject.GetComponent<Ship>().HitTheGas = true;
             Destroy(gameObject);
-        }//om denna krockar med ett gameobjekt med tag Player så skapar             och sedan dör. Mattias.
+        }//om denna krockar med ett gameobjekt med tag Player så activeras HitTheGas på spelaren och sedan dör. Mattias.
     }
 }

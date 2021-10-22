@@ -12,6 +12,6 @@ public class Autoup : MonoBehaviour
         {
             collision.gameObject.GetComponent<Ship>().blast.LetsButtonMash = true;
             Destroy(gameObject);
-        }
+        }//Säger till att när skeppet nuddar så activeras LetsButtonMash på Skeppets barn Firepoint. Mattias. Och dör. Mattias.
     }
 }

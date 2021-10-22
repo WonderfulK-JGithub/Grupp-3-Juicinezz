@@ -13,7 +13,7 @@ public class Blaster : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            Shoot();
+            Shoot();//BANG. Mattias.
         }
 
         if (LetsButtonMash)
@@ -22,7 +22,7 @@ public class Blaster : MonoBehaviour
             if (shootCooldown <= cooldownTimer)
             {
                 Shoot();
-                cooldownTimer = 0;
+                cooldownTimer = 0;//Auto Bang bang tills cooldown och cooldown timer är lika. Mattias.
             }
 
             Timer += Time.deltaTime;
@@ -36,7 +36,7 @@ public class Blaster : MonoBehaviour
     }
     void Shoot()
     {
-        Instantiate(projectilePrefab, FirePoint.position, FirePoint.rotation);
+        Instantiate(projectilePrefab, FirePoint.position, FirePoint.rotation); // Skapar Bullet. Mattias.
     }
 
 

@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Babyship : Ship 
+public class Babyship : Ship
 {
     public float CountDown = 15;
     float timer;
@@ -18,23 +16,7 @@ public class Babyship : Ship
         timer += Time.deltaTime;
         if (timer >= countDown)
         {
-            Destroy(gameObject);
+            Destroy(gameObject); //Dödar sig själv när countDown slår 0. Mattias.
         }
-
-        
-        //Efter att ha skapats sätter den timer på 15 sec sedan dör den. Mattias.
-
-       /* if (HitTheGas)
-        {
-            speed = baseSpeed *2;
-
-            if (speedtimer >= slowcountDown)
-            {
-                speed = baseSpeed;
-                speedtimer = 0;
-                HitTheGas = false;
-            }
-        }*/
-        
     }
 }
