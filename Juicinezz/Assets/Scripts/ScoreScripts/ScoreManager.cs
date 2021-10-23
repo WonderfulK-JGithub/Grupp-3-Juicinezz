@@ -1,7 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
 using TMPro;
-using UnityEngine.SceneManagement;
 
 
 //av K-J
@@ -163,10 +162,10 @@ public class ScoreManager : MonoBehaviour
 
     public void Restart()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneTransition.current.EnterScene(1);
     }
     public void MainMenu()
     {
-        SceneManager.LoadScene(0);
+        SceneTransition.current.EnterScene(0);
     }
 }

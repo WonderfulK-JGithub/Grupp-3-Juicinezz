@@ -33,62 +33,70 @@ public class GrunderFiender : MonoBehaviour
 
     public void Moving()
     {
-        if ((transform.position.x > 4 && direction == 1) || (transform.position.x < -4 && direction == -1)) // Checkar om fienden är nära kanterna och vänder den om den färdas i fel riktning - Gustav
+        if(ScoreManager.current.gameIsOngoing)
         {
-            direction *= -1;
-        }
-        FiendeBody.velocity = new Vector2(enemySpeed.x * direction, (transform.position.y - verticalstartpos) * VerticalDirection * enemySpeed.y); //multiplicerar hastigheten med riktningen så att den färdas i rätt riktning
-        // Y axeln håller objektet stilla om den är vid starthöjden av objektet, om den sedan flyttas lite neråt så kommer den att fortsätta i den riktningen och vänds om vid kanten av skärmen.
-
-        
-
-        if(transform.position.y >= verticalstartpos - 0.2)
-        {
-            targetRotation = 0f;//ändrar vilken rotation fienden ska ha
-        }
-        else
-        {
-            if(isAttacking)
+            if ((transform.position.x > 4 && direction == 1) || (transform.position.x < -4 && direction == -1)) // Checkar om fienden är nära kanterna och vänder den om den färdas i fel riktning - Gustav
             {
-                targetRotation = 25f * direction;//ändrar vilken rotation fienden ska ha
+                direction *= -1;
+            }
+            FiendeBody.velocity = new Vector2(enemySpeed.x * direction, (transform.position.y - verticalstartpos) * VerticalDirection * enemySpeed.y); //multiplicerar hastigheten med riktningen så att den färdas i rätt riktning
+                                                                                                                                                       // Y axeln håller objektet stilla om den är vid starthöjden av objektet, om den sedan flyttas lite neråt så kommer den att fortsätta i den riktningen och vänds om vid kanten av skärmen.
+
+
+
+            if (transform.position.y >= verticalstartpos - 0.2)
+            {
+                targetRotation = 0f;//ändrar vilken rotation fienden ska ha
             }
             else
             {
-                targetRotation = 180 - 25f * direction; //ändrar vilken rotation fienden ska ha
+                if (isAttacking)
+                {
+                    targetRotation = 25f * direction;//ändrar vilken rotation fienden ska ha
+                }
+                else
+                {
+                    targetRotation = 180 - 25f * direction; //ändrar vilken rotation fienden ska ha
+                }
             }
+            currentRotation = Mathf.MoveTowardsAngle(currentRotation, targetRotation, rotationSpeed); //ändrar rotations variabeln stegvis, så att den inte ändrar hela rotationen direkt
+            transform.localRotation = Quaternion.Euler(new Vector3(0f, 0f, currentRotation)); //ändrar rotationen
         }
-        currentRotation = Mathf.MoveTowardsAngle(currentRotation, targetRotation, rotationSpeed); //ändrar rotations variabeln stegvis, så att den inte ändrar hela rotationen direkt
-        transform.localRotation = Quaternion.Euler(new Vector3(0f, 0f, currentRotation)); //ändrar rotationen
+        
     }
 
     public void BasicAttack()
     {
-        if (transform.position.y < -4 && VerticalDirection == 1)
+        if(ScoreManager.current.gameIsOngoing)
         {
-            VerticalDirection = -1; // noterar när den är nära den nedre kanten av skärmen och vänder den om i fall att den är det
-            isAttacking = false;
-        }
-
-
-        attacktimer += Time.deltaTime;
-        if (attacktimer > attackintervall) // räknar upp till 15 sekunder och får fienden att attackera 
-        {
-            if(Random.Range(0,2) == 0)
+            if (transform.position.y < -4 && VerticalDirection == 1)
             {
-                VerticalDirection = 1; // ser till att fienden färdas i rätt riktning 
-
-                transform.position -= new Vector3(0, 0.1f, 0); //flyttar ner objektet lite vilket får den att börja åka ner
-
-                attacktimer = 0; //nollställer räknaren.
-
-                isAttacking = true;
+                VerticalDirection = -1; // noterar när den är nära den nedre kanten av skärmen och vänder den om i fall att den är det
+                isAttacking = false;
             }
-            else
+
+
+            attacktimer += Time.deltaTime;
+            if (attacktimer > attackintervall) // räknar upp till 15 sekunder och får fienden att attackera 
             {
-                attacktimer = Random.Range(0,attackintervall - 1);
+                if (Random.Range(0, 2) == 0)
+                {
+                    VerticalDirection = 1; // ser till att fienden färdas i rätt riktning 
+
+                    transform.position -= new Vector3(0, 0.1f, 0); //flyttar ner objektet lite vilket får den att börja åka ner
+
+                    attacktimer = 0; //nollställer räknaren.
+
+                    isAttacking = true;
+                }
+                else
+                {
+                    attacktimer = Random.Range(0, attackintervall - 1);
+                }
+
             }
-           
         }
+        
     }
 
     public virtual void Dead()
