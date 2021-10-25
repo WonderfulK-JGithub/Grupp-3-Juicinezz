@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d870e1b2063f734094d1e9aa1326c1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 0
+  time: 1
   overlayImage: {fileID: 6315467491471915976}
 --- !u!95 &6315467492314552605
 Animator:

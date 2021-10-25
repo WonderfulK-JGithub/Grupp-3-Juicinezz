@@ -39,6 +39,7 @@ public class SceneTransition : MonoBehaviour
 
     void ChangeScene()
     {
+        anim.speed = 0;
         SceneManager.LoadScene(targetScene);
     }
 }
