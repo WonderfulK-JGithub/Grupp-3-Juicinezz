@@ -1,29 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public class EnemySpawner : MonoBehaviour
+public class EnemySpawner : MonoBehaviour //av K-J
 {
     public static EnemySpawner current = null;
 
-    [SerializeField] GameObject[] enemyPrefabs = null;
-    [SerializeField] float spawnIntervalTime = 0.5f;
-    [SerializeField] float spawnCallTime = 0f;
-    [SerializeField]Vector3 spawnCords = new Vector3();
-    [SerializeField] float firstRowPos = 0;
-    [SerializeField] int maxPerRow = 10;
+    [SerializeField] GameObject[] enemyPrefabs = null; //array med prefabs på våra 3 fiender
+    [SerializeField] float spawnIntervalTime = 0.5f;//hur lång tid det ska vara mellan varje fiendes spawn i ett set
+    [SerializeField] float spawnCallTime = 0f;// hur lång tid det ska vara mellan olika spawn-sets
+    [SerializeField] Vector3 spawnCords = new Vector3();//vart fienden ska spawna
+    [SerializeField] float firstRowPos = 0; //vilken y höjd som den lägsta raden har
+    [SerializeField] int maxPerRow = 10; //hur många fiender det får vara på en rad
 
-    [Header("Odds")]
+    [Header("Odds")] //odsen för att spawna en typ av fiende
     [SerializeField] int diveEnemyOdds = 0;
     [SerializeField] int shootEnemyOdds = 0;
     [SerializeField] int strongEnemyOdds = 0;
 
-    int[] rowAmount = new int[5];
+    int[] rowAmount = new int[5];//array som håller koll på hur många fiender det finns på varje rad
 
-    int currentEnemy = 0;
-    int spawnCount = 0;
-    int spawnDirection = 1;
-    float spawnTimer = 0f;
-    float waitTimer = 0f;
+    int currentEnemy = 0;//vilken typ av fiende som ska spawnas (0,1 eller 2)
+    int spawnCount = 0;//hur många fiender som ska spawnas i nuvarande set
+    int spawnDirection = 1;//bestämmer vilket håll fienden ska komma från när den spawnas
+    float spawnTimer = 0f;//håller tid
+    float waitTimer = 0f;//--||--
 
     private void Awake()
     {
@@ -32,7 +32,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void Update()
     {
-        if(ScoreManager.current.gameIsOngoing)
+        if(ScoreManager.current.gameIsOngoing)//kollar om spelet är igång
         {
             if (spawnCount > 0)
             {
@@ -40,11 +40,12 @@ public class EnemySpawner : MonoBehaviour
                 spawnTimer -= Time.deltaTime;
                 if (spawnTimer <= 0f)
                 {
-                    GrunderFiender enemy = Instantiate(enemyPrefabs[currentEnemy], new Vector3(spawnCords.x * spawnDirection, spawnCords.y, 0f), Quaternion.identity).GetComponent<GrunderFiender>();
-                    enemy.direction = spawnDirection;
+                    GrunderFiender enemy = Instantiate(enemyPrefabs[currentEnemy], new Vector3(spawnCords.x * spawnDirection, spawnCords.y, 0f), Quaternion.identity).GetComponent<GrunderFiender>();//spawnar en fiende
+                    enemy.direction = spawnDirection;//gör att den åker åt rätt håll
 
-                    switch (currentEnemy)
+                    switch (currentEnemy)//ger enemyn rätt rad baserat på vilken typ den är
                     {
+                        //den kollar alltid om den första raden är full. Är det så hamnar fienden på den andra raden (gäller inte den starka fienden som bara har en rad)
                         case 0:
                             if (rowAmount[0] < maxPerRow)
                             {
@@ -84,7 +85,7 @@ public class EnemySpawner : MonoBehaviour
                 waitTimer -= Time.deltaTime;
                 if (waitTimer <= 0f)
                 {
-                    SpawnEnemySet(10);
+                    SpawnEnemySet(10);//Börjar på ett set som (kanske) spawnar 10 fiender
 
                     waitTimer = spawnCallTime;
                 }
@@ -96,17 +97,20 @@ public class EnemySpawner : MonoBehaviour
     public void SpawnEnemySet(int enemyAmount)
     {
         currentEnemy = RandomEnemy();
-        spawnDirection = Random.Range(0, 2) == 0 ? 1 : -1;
+        spawnDirection = Random.Range(0, 2) == 0 ? 1 : -1;//ger en random starthåll på set:et
 
-        if(currentEnemy != -1)
+        if(currentEnemy != -1)//om currentEnemy == -1 är alla rader fulla
         {
             if(currentEnemy != 2)
             {
                 spawnCount = Mathf.Clamp(enemyAmount, 0, maxPerRow * 2 - GetEnemyAmount(currentEnemy));
+                //gör att det inte spawnas fler fiender än som får plats på raderna
+                //detta gör att i vissa set:s spawnas det färre än 10 fiender
             }
             else
             {
                 spawnCount = Mathf.Clamp(enemyAmount, 0, maxPerRow - GetEnemyAmount(currentEnemy));
+                //--||-- fast för starka fienden
             }
             spawnTimer = spawnIntervalTime;
         }
@@ -115,9 +119,10 @@ public class EnemySpawner : MonoBehaviour
 
     int RandomEnemy()
     {
-        int random = Random.Range(0, diveEnemyOdds + shootEnemyOdds + strongEnemyOdds + 1);
+        int random = Random.Range(0, diveEnemyOdds + shootEnemyOdds + strongEnemyOdds + 1);//ett random värde som bestämmer vilken fiende som ska spawnas
 
-        if(random < diveEnemyOdds)
+        //om den slumpvalda fienden inte har plats i sin rad väljer den en annan typ av fiende
+        if(random < diveEnemyOdds)//dive fiende
         {
             if(GetEnemyAmount(0) < maxPerRow * 2)
             {
@@ -132,7 +137,7 @@ public class EnemySpawner : MonoBehaviour
                 return 2;
             }
         }
-        else if(random < diveEnemyOdds + shootEnemyOdds)
+        else if(random < diveEnemyOdds + shootEnemyOdds) //shoot fiende
         {
             if (GetEnemyAmount(1) < maxPerRow * 2)
             {
@@ -147,7 +152,7 @@ public class EnemySpawner : MonoBehaviour
                 return 2;
             }
         }
-        else
+        else //stark fiende
         {
             if (GetEnemyAmount(2) < maxPerRow)
             {
@@ -164,11 +169,12 @@ public class EnemySpawner : MonoBehaviour
         }
 
 
-        return -1;
+        return -1;//alla rader är fulla om man kommer hit i koden
     }
 
-    int GetEnemyAmount(int enemyType)
+    int GetEnemyAmount(int enemyType)//returnar hur många det finns på raden baserat på enemy type
     {
+        
         switch(enemyType)
         {
             case 0:
@@ -176,14 +182,13 @@ public class EnemySpawner : MonoBehaviour
             case 1:
                 return rowAmount[2] + rowAmount[3];
             case 2:
-                return rowAmount[4];
+                return rowAmount[4];//stark fiende har bara 1 rad
         }
         return -1;
     }
 
-    public void EnemyDead(float enemyYStartPosition)
+    public void EnemyDead(float enemyYStartPosition)//tar bort fienden från rowAmount arrayen när den har dött
     {
-        print(Mathf.FloorToInt(enemyYStartPosition - firstRowPos));
         rowAmount[Mathf.FloorToInt(enemyYStartPosition - firstRowPos)]--;
     }
 }
