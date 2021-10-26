@@ -3,7 +3,7 @@ using UnityEngine;
 public class Babyship : Ship
 {
     public float CountDown = 15;
-    float timer;
+    float Deathtimer;
 
 
     private void Start()
@@ -13,8 +13,8 @@ public class Babyship : Ship
     public override void Update()
     {
         base.Update(); //tar Update() från Skep koden. Mattias.
-        timer += Time.deltaTime;
-        if (timer >= countDown)
+        Deathtimer += Time.deltaTime;
+        if (Deathtimer >= countDown)
         {
             Destroy(gameObject); //Dödar sig själv när countDown slår 0. Mattias.
         }
