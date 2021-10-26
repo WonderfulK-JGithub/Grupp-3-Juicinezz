@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6135877454388752626}
   - component: {fileID: 5575541816435237393}
+  - component: {fileID: 7527806705041966564}
   m_Layer: 0
   m_Name: SpawnedText
   m_TagString: Untagged
@@ -46,6 +47,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 6135877455746110381}
   speed: 2
+--- !u!95 &7527806705041966564
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6135877454388752627}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 291cda3de4bc5d04eb3e80f2e81babce, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6135877454513515105
 GameObject:
   m_ObjectHideFlags: 0
@@ -220,7 +240,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4280460892
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3

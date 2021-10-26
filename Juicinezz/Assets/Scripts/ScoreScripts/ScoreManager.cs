@@ -79,6 +79,7 @@ public class ScoreManager : MonoBehaviour
         for (int i = 0; i < currentLeaderBoard.Count; i++)
         {
             nameList[i].text = currentLeaderBoard[i].playerName + " : " + currentLeaderBoard[i].score;
+            if (nameList[i].text == playerName) nameList[i].color = Color.green;//ens egna namn i leaderboarden är grön
         }
     }
 

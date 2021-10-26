@@ -8,6 +8,7 @@ public class EnemySpawner : MonoBehaviour //av K-J
     [SerializeField] GameObject[] enemyPrefabs = null; //array med prefabs på våra 3 fiender
     [SerializeField] float spawnIntervalTime = 0.5f;//hur lång tid det ska vara mellan varje fiendes spawn i ett set
     [SerializeField] float spawnCallTime = 0f;// hur lång tid det ska vara mellan olika spawn-sets
+    [SerializeField,Range(0.1f,0.99f)] float spawnCallRecution = 0f; //hur mycket spawnCallTime ska minska efter en viss tid. Detta ska göra att spelet blir stegvis svårare
     [SerializeField] Vector3 spawnCords = new Vector3();//vart fienden ska spawna
     [SerializeField] float firstRowPos = 0; //vilken y höjd som den lägsta raden har
     [SerializeField] int maxPerRow = 10; //hur många fiender det får vara på en rad
@@ -24,6 +25,7 @@ public class EnemySpawner : MonoBehaviour //av K-J
     int spawnDirection = 1;//bestämmer vilket håll fienden ska komma från när den spawnas
     float spawnTimer = 0f;//håller tid
     float waitTimer = 0f;//--||--
+    float reductionTimer = 0f; //stegvis svårare sak grej thing
 
     private void Awake()
     {
@@ -89,6 +91,12 @@ public class EnemySpawner : MonoBehaviour //av K-J
 
                     waitTimer = spawnCallTime;
                 }
+            }
+
+            reductionTimer = +Time.deltaTime;
+            if(reductionTimer == 20)//spelet blir svårare varje 20 sekunder
+            {
+                spawnCallTime *= spawnCallRecution;
             }
         }
         
