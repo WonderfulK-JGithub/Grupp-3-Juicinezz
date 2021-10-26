@@ -14,14 +14,14 @@ public class SoundManagerScript : MonoBehaviour
     {
         Damage = Resources.Load<AudioClip>("Damage");
         GameDeath = Resources.Load<AudioClip>("Death");
-        KillSound = Resources.Load<AudioClip>("Kill");
+        KillSound = Resources.Load<AudioClip>("KillSound");
         LobbyClick = Resources.Load<AudioClip>("Click");
         PowerUp = Resources.Load<AudioClip>("1Up");
         Shoot = Resources.Load<AudioClip>("Shoot");
-        StartRound = Resources.Load<AudioClip>("Start");
+        StartRound = Resources.Load<AudioClip>("Startsound");
         Explosion = Resources.Load<AudioClip>("Explosion");
         SpeedBoost = Resources.Load<AudioClip>("Speed");
-        EnemyShoot = Resources.Load<AudioClip>("OppShoot");
+        EnemyShoot = Resources.Load<AudioClip>("EnemyShoot");
 
         audioSrc = GetComponent<AudioSource>();
     }
@@ -61,7 +61,7 @@ public class SoundManagerScript : MonoBehaviour
             case "Speed":
                 audioSrc.PlayOneShot(SpeedBoost);
                 break;
-            case "OppShot":
+            case "OppShoot":
                 audioSrc.PlayOneShot(EnemyShoot);
                 break;
         }

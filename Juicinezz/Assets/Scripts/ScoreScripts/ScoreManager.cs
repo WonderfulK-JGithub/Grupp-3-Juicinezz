@@ -140,6 +140,7 @@ public class ScoreManager : MonoBehaviour
 
     public void NameReady() //när man är klar med sitt namn
     {
+        SoundManagerScript.PlaySound("Start");
         nameText.text = playerName;
         writeNameParent.SetActive(false);
         gameIsOngoing = true;
