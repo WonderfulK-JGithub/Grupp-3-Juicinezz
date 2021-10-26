@@ -11,6 +11,14 @@ public class GrunderFiender : MonoBehaviour
     public float attackintervall = 10;
     public float verticalstartpos;
     public GameObject deadparticle;
+    public Collider2D disable;
+
+    public GameObject Auto;
+    public GameObject Clone;
+    public GameObject Shield;
+    public GameObject Speed;
+
+
 
     public Vector2 enemySpeed;
     public int pointValue;
@@ -27,8 +35,8 @@ public class GrunderFiender : MonoBehaviour
     public void setup()
     {
         anim = GetComponent<Animator>();
-        print("yes");
         FiendeBody = GetComponent<Rigidbody2D>();
+        disable = GetComponent<Collider2D>();
     }
 
     public void Moving()
@@ -105,6 +113,28 @@ public class GrunderFiender : MonoBehaviour
         Instantiate(deadparticle, transform.position, Quaternion.identity);//skapar explotionen
         //Destroy(gameObject); //tar bort fiende objektet
         anim.SetTrigger("Die");
+
+        int getspowerup = Random.Range(0, 40);
+
+        if (getspowerup == 0)
+        {
+            Instantiate(Auto, transform.position, Quaternion.identity);
+        } 
+        else if (getspowerup == 1)
+        {
+            Instantiate(Clone, transform.position, Quaternion.identity);
+        } 
+        else if (getspowerup == 2)
+        {
+            Instantiate(Shield, transform.position, Quaternion.identity);
+        } 
+        else if (getspowerup == 3)
+        {
+            Instantiate(Speed, transform.position, Quaternion.identity);
+        }
+
+
+        disable.enabled = false;
         this.enabled = false;
         FiendeBody.velocity = Vector2.zero;
 

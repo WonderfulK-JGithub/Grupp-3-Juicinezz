@@ -40,7 +40,7 @@ public class Ship : MonoBehaviour
             {
                 transform.position += new Vector3(0, -speed, 0) * Time.deltaTime;
             }
-            int dir = 0; // Styr animatorn.
+            int dir = 0; // Styr animatorn. Mattias.
             if (Input.GetKey(KeyCode.A))
             {
                 transform.position += new Vector3(-speed, 0, 0) * Time.deltaTime;
