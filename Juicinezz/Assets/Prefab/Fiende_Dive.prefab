@@ -101,6 +101,11 @@ MonoBehaviour:
   attackintervall: 10
   verticalstartpos: 4
   deadparticle: {fileID: 3832211732124252314, guid: 9137244aad2e28a4e81f54663d9da48b, type: 3}
+  disable: {fileID: 0}
+  Auto: {fileID: 1603072418735464791, guid: 16543a4beae013840b9b458584a6ba7d, type: 3}
+  Clone: {fileID: 5285016004672061381, guid: 79b696a3c425e2e45b75285c831d0ea4, type: 3}
+  Shield: {fileID: 5950417537260412333, guid: e2e1caaaea98a4f488a9e91df493ef08, type: 3}
+  Speed: {fileID: 3112040262585985183, guid: c0f3128292347c5478f4eac2a1b1d22a, type: 3}
   enemySpeed: {x: 2.5, y: 1}
   pointValue: 69
   isAttacking: 0
