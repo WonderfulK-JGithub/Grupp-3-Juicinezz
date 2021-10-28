@@ -12,6 +12,12 @@ public class StarkFiende : GrunderFiender
     public SpriteRenderer sprite;
     public Color angrycolor;
 
+    public ParticleSystem Par1;
+    public ParticleSystem Par2;
+    public ParticleSystem Par3;
+    public float Angytimer;
+    public float countDown = 2;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,7 +47,16 @@ public class StarkFiende : GrunderFiender
 
         }
 
-        
+        if(hp == 1)
+        {
+            Angytimer += Time.deltaTime;
+            if (Angytimer >= countDown)
+            {
+                Par1.gameObject.SetActive(false);
+                Par2.gameObject.SetActive(false);
+                Par3.gameObject.SetActive(false);
+            }
+        }
     }
 
     public override void Dead() // overidar den vanliga koden för att ta skada
@@ -54,6 +69,10 @@ public class StarkFiende : GrunderFiender
         } else
         {
             sprite.color = angrycolor;
+
+            Par1.gameObject.SetActive(true);
+            Par2.gameObject.SetActive(true);
+            Par3.gameObject.SetActive(true);
 
             skjutintervall--;
             enemySpeed += new Vector2(1, 0.5f);
