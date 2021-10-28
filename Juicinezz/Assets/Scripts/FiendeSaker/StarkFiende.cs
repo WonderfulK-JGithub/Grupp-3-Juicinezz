@@ -29,34 +29,38 @@ public class StarkFiende : GrunderFiender
     // Update is called once per frame
     void Update()
     {
-        base.Moving();
-
-        base.BasicAttack();
-
-        skjuttimer += Time.deltaTime; 
-        
-        // det här stycket är i stort sett likadant som koden för skjut fienden förutom att vi lade till kod för att rikta projektilerna mot spelaren. -Gustav
-        if (skjuttimer > skjutintervall)
+        if(ScoreManager.current.gameIsOngoing)
         {
-            float angle = Vector2.Angle(Vector2.up, Ship.current.transform.position - transform.position); 
-            // den här delen av koden fick jag av KJ, det är den som riktar projektilen mot spelaren. -Gustav
-            float factor = Ship.current.transform.position.x > transform.position.x ? -1 : 1;
+            base.Moving();
 
-            Instantiate(projektil, FiendeBody.position, Quaternion.Euler(0f, 0f, angle * factor));
-            skjuttimer = 0;
+            base.BasicAttack();
 
-        }
+            skjuttimer += Time.deltaTime;
 
-        if(hp == 1)
-        {
-            Angytimer += Time.deltaTime;
-            if (Angytimer >= countDown)
+            // det här stycket är i stort sett likadant som koden för skjut fienden förutom att vi lade till kod för att rikta projektilerna mot spelaren. -Gustav
+            if (skjuttimer > skjutintervall)
             {
-                Par1.gameObject.SetActive(false);
-                Par2.gameObject.SetActive(false);
-                Par3.gameObject.SetActive(false);
+                float angle = Vector2.Angle(Vector2.up, Ship.current.transform.position - transform.position);
+                // den här delen av koden fick jag av KJ, det är den som riktar projektilen mot spelaren. -Gustav
+                float factor = Ship.current.transform.position.x > transform.position.x ? -1 : 1;
+
+                Instantiate(projektil, FiendeBody.position, Quaternion.Euler(0f, 0f, angle * factor));
+                skjuttimer = 0;
+
+            }
+
+            if (hp == 1)
+            {
+                Angytimer += Time.deltaTime;
+                if (Angytimer >= countDown)
+                {
+                    Par1.gameObject.SetActive(false);
+                    Par2.gameObject.SetActive(false);
+                    Par3.gameObject.SetActive(false);
+                }
             }
         }
+        
     }
 
     public override void Dead() // overidar den vanliga koden för att ta skada

@@ -13,9 +13,10 @@ public class Autoup : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        SoundManagerScript.PlaySound("Speed");
+        
         if (collision.gameObject.tag == "Player")
         {
+            SoundManagerScript.PlaySound("PowerUp");
             collision.gameObject.GetComponent<Ship>().blast.LetsButtonMash = true;
             Destroy(gameObject);
         }//Säger till att när skeppet nuddar så activeras LetsButtonMash på Skeppets barn Firepoint. Mattias. Och dör. Mattias.

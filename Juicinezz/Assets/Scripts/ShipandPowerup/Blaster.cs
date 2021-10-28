@@ -42,6 +42,7 @@ public class Blaster : MonoBehaviour
     void Shoot()
     {
         SoundManagerScript.PlaySound("Shoot");
+        CameraController.current.ScreenShake();
         Instantiate(projectilePrefab, FirePoint.position, FirePoint.rotation); // Skapar Bullet. Mattias.
     }
 

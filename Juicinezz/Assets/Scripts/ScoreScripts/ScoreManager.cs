@@ -96,7 +96,6 @@ public class ScoreManager : MonoBehaviour
                 info.score = score;
                 currentLeaderBoard.Add(info); //lägger till nya spelaren i leaderboarden
             }
-            else return;
         }
         else
         {

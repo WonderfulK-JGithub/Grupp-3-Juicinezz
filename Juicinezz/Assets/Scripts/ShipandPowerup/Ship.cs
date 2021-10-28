@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Ship : MonoBehaviour
 {  
-   public static float baseSpeed =10;
+   public float baseSpeed =10;
    public static float speed;
    public float HP = 3;
 
@@ -56,7 +56,7 @@ public class Ship : MonoBehaviour
             anim.SetInteger("Dir", dir);
             if (invincibility) //Gör spelaren odödlig en liten stund och spelar en animation. Mattias.
             {
-                anim.Play("Ship_Invincible");
+                
 
                 timer += Time.deltaTime;
                 if (timer >= countDown)
@@ -120,7 +120,7 @@ public class Ship : MonoBehaviour
                 GetComponent<BoxCollider2D>().enabled = false;
             }
 
-            CameraController.current.ScreenShake();
+            CameraController.current.ScreenShake(0.25f,0.3f);
         }
         
 

@@ -16,11 +16,11 @@ public class SoundManagerScript : MonoBehaviour
         GameDeath = Resources.Load<AudioClip>("Death");
         KillSound = Resources.Load<AudioClip>("KillSound");
         LobbyClick = Resources.Load<AudioClip>("LobbyClick");
-        PowerUp = Resources.Load<AudioClip>("1Up");
+        PowerUp = Resources.Load<AudioClip>("PowerUp");
         Shoot = Resources.Load<AudioClip>("Shoot");
         StartRound = Resources.Load<AudioClip>("Startsound");
         Explosion = Resources.Load<AudioClip>("Explosion");
-        SpeedBoost = Resources.Load<AudioClip>("Speed");
+        SpeedBoost = Resources.Load<AudioClip>("SpeedBoost");
         EnemyShoot = Resources.Load<AudioClip>("EnemyShoot");
 
         audioSrc = GetComponent<AudioSource>();
@@ -46,7 +46,7 @@ public class SoundManagerScript : MonoBehaviour
             case "Click":
                 audioSrc.PlayOneShot(LobbyClick);
                 break;
-            case "1Up":
+            case "PowerUp":
                 audioSrc.PlayOneShot(PowerUp);
                 break;
             case "Shoot":

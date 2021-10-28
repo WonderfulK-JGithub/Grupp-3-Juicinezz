@@ -16,22 +16,25 @@ public class SkjutandeFiendeScript : GrunderFiender
     void Update()
     {
         base.Moving();
-
-        attacktimer += Time.deltaTime;
-
-        if (attacktimer > attackintervall)
+        if(ScoreManager.current.gameIsOngoing)
         {
-            if(Random.Range(0,2) == 0)
-            {
-                Instantiate(Kula, FiendeBody.position, Quaternion.Euler(new Vector3(0,0,180)));
+            attacktimer += Time.deltaTime;
 
-                attacktimer = 0;
-            }
-            else
+            if (attacktimer > attackintervall)
             {
-                attacktimer = Random.Range(0, attackintervall - 1);
+                if (Random.Range(0, 2) == 0)
+                {
+                    Instantiate(Kula, FiendeBody.position, Quaternion.Euler(new Vector3(0, 0, 180)));
+
+                    attacktimer = 0;
+                }
+                else
+                {
+                    attacktimer = Random.Range(0, attackintervall - 1);
+                }
+
             }
-            
         }
+        
     }
 }

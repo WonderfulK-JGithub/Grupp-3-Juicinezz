@@ -14,9 +14,10 @@ public class Iwillnotdie : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            SoundManagerScript.PlaySound("Speed");
+            SoundManagerScript.PlaySound("PowerUp");
             collision.gameObject.GetComponent<Ship>().invincibility = true;
-           
+            collision.gameObject.GetComponent<Ship>().anim.Play("Ship_Invincible");
+
             Destroy(gameObject);
         }//om denna krockar med ett gameobjekt med tag Player så aktiveras boolen invincibility på spelaren och sedan dör den. Mattias.
     }

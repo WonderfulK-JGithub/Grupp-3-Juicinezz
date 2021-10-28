@@ -14,8 +14,6 @@ GameObject:
   - component: {fileID: 7331036099682719295}
   - component: {fileID: 7331036099682719294}
   - component: {fileID: 912578737346076176}
-  - component: {fileID: 4997128181307467926}
-  - component: {fileID: 8506102531803849076}
   m_Layer: 0
   m_Name: Ship
   m_TagString: Player
@@ -71,6 +69,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 375dfdd37f876e4449811cb0910c34a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baseSpeed: 5
   HP: 3
   anim: {fileID: 7331036099682719294}
   invincibility: 0
@@ -162,7 +161,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0024614483, y: 0.08854133}
+  m_Offset: {x: 0, y: 0.1}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -173,59 +172,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.31573448, y: 0.6063153}
-  m_EdgeRadius: 0
---- !u!61 &4997128181307467926
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7331036099682719290}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.25106132, y: -0.07876431}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 0.32, y: 0.32}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.1926657, y: 0.3501941}
-  m_EdgeRadius: 0
---- !u!61 &8506102531803849076
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7331036099682719290}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.25429857, y: -0.07945393}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 0.32, y: 0.32}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.18266767, y: 0.34166744}
+  m_Size: {x: 0.6517062, y: 0.6063153}
   m_EdgeRadius: 0
 --- !u!1 &7331036099984909631
 GameObject:

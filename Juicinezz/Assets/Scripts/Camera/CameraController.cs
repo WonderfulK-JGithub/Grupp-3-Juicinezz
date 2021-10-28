@@ -36,11 +36,11 @@ public class CameraController : MonoBehaviour
     }
 
 
-    public void ScreenShake()
+    public void ScreenShake(float extratime = 0f, float extraMagnitude = 0f)
     {
         //ger private variablerna rätt värde baserat på variablerna som man kan ändra i inspektorn
-        timer = shakeTime;
-        power = shakeMagnitude;
+        timer = shakeTime + extratime;
+        power = shakeMagnitude + extraMagnitude;
         powerReduction = power / timer;
     }
 }
