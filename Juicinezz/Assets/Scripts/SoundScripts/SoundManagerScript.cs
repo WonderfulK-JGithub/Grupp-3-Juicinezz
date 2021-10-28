@@ -15,7 +15,7 @@ public class SoundManagerScript : MonoBehaviour
         Damage = Resources.Load<AudioClip>("Damage");
         GameDeath = Resources.Load<AudioClip>("Death");
         KillSound = Resources.Load<AudioClip>("KillSound");
-        LobbyClick = Resources.Load<AudioClip>("Click");
+        LobbyClick = Resources.Load<AudioClip>("LobbyClick");
         PowerUp = Resources.Load<AudioClip>("1Up");
         Shoot = Resources.Load<AudioClip>("Shoot");
         StartRound = Resources.Load<AudioClip>("Startsound");

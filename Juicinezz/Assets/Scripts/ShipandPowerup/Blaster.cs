@@ -11,31 +11,37 @@ public class Blaster : MonoBehaviour
     float cooldownTimer = 0;
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if(ScoreManager.current.gameIsOngoing)
         {
-            Shoot();//BANG. Mattias.
-        }
-
-        if (LetsButtonMash)
-        {
-            cooldownTimer += Time.deltaTime;
-            if (shootCooldown <= cooldownTimer)
+            if (Input.GetButtonDown("Fire1"))
             {
-                Shoot();
-                cooldownTimer = 0;//Auto Bang bang tills cooldown och cooldown timer är lika. Mattias.
+                Shoot();//BANG. Mattias.
             }
 
-            Timer += Time.deltaTime;
-            if (Timer >= countDown)
+            if (LetsButtonMash)
             {
-                LetsButtonMash = false;
-                Timer = 0;
+
+                cooldownTimer += Time.deltaTime;
+                if (shootCooldown <= cooldownTimer)
+                {
+                    Shoot();
+                    cooldownTimer = 0;//Auto Bang bang tills cooldown och cooldown timer är lika. Mattias.
+                }
+
+                Timer += Time.deltaTime;
+                if (Timer >= countDown)
+                {
+                    LetsButtonMash = false;
+                    Timer = 0;
+                }
             }
         }
+        
    
     }
     void Shoot()
     {
+        SoundManagerScript.PlaySound("Shoot");
         Instantiate(projectilePrefab, FirePoint.position, FirePoint.rotation); // Skapar Bullet. Mattias.
     }
 

@@ -99,6 +99,7 @@ public class Ship : MonoBehaviour
     {
         if (!invincibility)
         {
+            SoundManagerScript.PlaySound("Damage");
             HP -= damage;
 
             if(HP == 2)
@@ -111,14 +112,24 @@ public class Ship : MonoBehaviour
             }
             else if (HP <= 0)
             {
-                Destroy(gameObject);
-                ScoreManager.current.GameOver();
+                
+                
+                anim.Play("Ship_Expolde");
+                SoundManagerScript.PlaySound("Explosion");
+                enabled = false;
+                GetComponent<BoxCollider2D>().enabled = false;
             }
 
             CameraController.current.ScreenShake();
         }
         
 
+    }
+
+    void AnimDestroy()
+    {
+        Destroy(gameObject);
+        ScoreManager.current.GameOver();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

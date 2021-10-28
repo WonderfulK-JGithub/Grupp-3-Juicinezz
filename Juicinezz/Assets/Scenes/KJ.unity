@@ -645,6 +645,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 482118020}
+    - target: {fileID: 744204167647733605, guid: e081090a3433f314b9586768ff18c29f, type: 3}
+      propertyPath: m_text
+      value: Enter yo name
+      objectReference: {fileID: 0}
     - target: {fileID: 744204168023795457, guid: e081090a3433f314b9586768ff18c29f, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -702,6 +706,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2794532261829105170, guid: bd467b287d44e9341ac7d0548c182615, type: 3}
+      propertyPath: maxPerRow
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2794532261829105170, guid: bd467b287d44e9341ac7d0548c182615, type: 3}
       propertyPath: spawnCallRecution
       value: 0.98

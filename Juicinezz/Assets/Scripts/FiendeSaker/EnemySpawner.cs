@@ -117,7 +117,7 @@ public class EnemySpawner : MonoBehaviour //av K-J
             }
             else
             {
-                spawnCount = Mathf.Clamp(enemyAmount, 0, maxPerRow - GetEnemyAmount(currentEnemy));
+                spawnCount = Mathf.Clamp(enemyAmount, 0, maxPerRow / 2 - GetEnemyAmount(currentEnemy));//hälften så många startka fiender får spawna på sin rad
                 //--||-- fast för starka fienden
             }
             spawnTimer = spawnIntervalTime;
@@ -140,7 +140,7 @@ public class EnemySpawner : MonoBehaviour //av K-J
             {
                 return 1;
             }
-            else if (GetEnemyAmount(2) < maxPerRow)
+            else if (GetEnemyAmount(2) < maxPerRow * 0.5)
             {
                 return 2;
             }
@@ -155,14 +155,14 @@ public class EnemySpawner : MonoBehaviour //av K-J
             {
                 return 0;
             }
-            else if (GetEnemyAmount(2) < maxPerRow)
+            else if (GetEnemyAmount(2) < maxPerRow * 0.5)
             {
                 return 2;
             }
         }
         else //stark fiende
         {
-            if (GetEnemyAmount(2) < maxPerRow)
+            if (GetEnemyAmount(2) < maxPerRow * 0.5)
             {
                 return 2;
             }

@@ -128,7 +128,8 @@ public class ScoreManager : MonoBehaviour
 
     public void OnChangedName()//när man skriver en karaktär i input fieldet sker detta
     {
-        if(inputField.text.Length <= characterLimit)
+        SoundManagerScript.PlaySound("Click");
+        if (inputField.text.Length <= characterLimit)
         {
             playerName = inputField.text;
         }
@@ -140,6 +141,7 @@ public class ScoreManager : MonoBehaviour
 
     public void NameReady() //när man är klar med sitt namn
     {
+        if (inputField.text.Length == 0) return;
         SoundManagerScript.PlaySound("Start");
         nameText.text = playerName;
         writeNameParent.SetActive(false);
@@ -169,5 +171,11 @@ public class ScoreManager : MonoBehaviour
     public void MainMenu()
     {
         SceneTransition.current.EnterScene(0);
+    }
+
+    public void AnimSFX()
+    {
+        //animationen kallar detta
+        SoundManagerScript.PlaySound("Click");
     }
 }
