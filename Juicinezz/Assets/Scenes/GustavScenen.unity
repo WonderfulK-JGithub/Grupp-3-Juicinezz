@@ -410,6 +410,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2794532261829105170, guid: bd467b287d44e9341ac7d0548c182615, type: 3}
+      propertyPath: maxPerRow
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2794532261829105172, guid: bd467b287d44e9341ac7d0548c182615, type: 3}
       propertyPath: m_Name
       value: EnemySpawner
@@ -581,5 +585,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7331036099682719295, guid: 2f5285da95f81cb4d9d4f0eda644da52, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 70c339c71db2a1b408bd7b138dc7df8d, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f5285da95f81cb4d9d4f0eda644da52, type: 3}
