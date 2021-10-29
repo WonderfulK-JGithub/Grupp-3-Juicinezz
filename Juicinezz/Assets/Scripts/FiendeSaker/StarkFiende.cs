@@ -45,7 +45,7 @@ public class StarkFiende : GrunderFiender
                 float factor = Ship.current.transform.position.x > transform.position.x ? -1 : 1;
 
                 Instantiate(projektil, FiendeBody.position, Quaternion.Euler(0f, 0f, angle * factor));
-                skjuttimer = 0;
+                skjuttimer = 0 + EnemySpawner.current.enemyExtraSpeed;
 
             }
 

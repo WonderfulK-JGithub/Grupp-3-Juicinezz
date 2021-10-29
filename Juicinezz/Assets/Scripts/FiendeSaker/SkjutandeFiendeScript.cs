@@ -30,7 +30,7 @@ public class SkjutandeFiendeScript : GrunderFiender
                 }
                 else
                 {
-                    attacktimer = Random.Range(0, attackintervall - 1);
+                    attacktimer = Random.Range(0, attackintervall - 1 - EnemySpawner.current.enemyExtraSpeed);
                 }
 
             }

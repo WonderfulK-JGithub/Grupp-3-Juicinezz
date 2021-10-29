@@ -47,7 +47,7 @@ public class GrunderFiender : MonoBehaviour
             {
                 direction *= -1;
             }
-            FiendeBody.velocity = new Vector2(enemySpeed.x * direction, (transform.position.y - verticalstartpos) * VerticalDirection * enemySpeed.y); //multiplicerar hastigheten med riktningen så att den färdas i rätt riktning
+            FiendeBody.velocity = new Vector2((enemySpeed.x + EnemySpawner.current.enemyExtraSpeed) * direction, (transform.position.y - verticalstartpos) * VerticalDirection * (enemySpeed.y + EnemySpawner.current.enemyExtraSpeed * 0.5f)); //multiplicerar hastigheten med riktningen så att den färdas i rätt riktning
                                                                                                                                                        // Y axeln håller objektet stilla om den är vid starthöjden av objektet, om den sedan flyttas lite neråt så kommer den att fortsätta i den riktningen och vänds om vid kanten av skärmen.
 
 
@@ -99,7 +99,7 @@ public class GrunderFiender : MonoBehaviour
                 }
                 else
                 {
-                    attacktimer = Random.Range(0, attackintervall - 1);
+                    attacktimer = Random.Range(0, attackintervall - 1 - EnemySpawner.current.enemyExtraSpeed);
                 }
 
             }

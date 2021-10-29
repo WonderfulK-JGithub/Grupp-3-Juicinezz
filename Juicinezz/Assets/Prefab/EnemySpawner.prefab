@@ -51,7 +51,12 @@ MonoBehaviour:
   spawnCallTime: 5
   spawnCords: {x: -9, y: -5, z: 0}
   firstRowPos: 0
-  maxPerRow: 1
+  maxPerRow: 10
+  difficultyDelay: 5
+  spawnCallRecution: 0.9
+  enemyExtraSpeed: 0
+  extraSpeedIncrease: 0.3
+  maxExtraSpeed: 3
   diveEnemyOdds: 6
   shootEnemyOdds: 3
   strongEnemyOdds: 1

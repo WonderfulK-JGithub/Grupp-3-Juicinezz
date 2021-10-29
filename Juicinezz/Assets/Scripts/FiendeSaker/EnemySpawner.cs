@@ -8,10 +8,17 @@ public class EnemySpawner : MonoBehaviour //av K-J
     [SerializeField] GameObject[] enemyPrefabs = null; //array med prefabs på våra 3 fiender
     [SerializeField] float spawnIntervalTime = 0.5f;//hur lång tid det ska vara mellan varje fiendes spawn i ett set
     [SerializeField] float spawnCallTime = 0f;// hur lång tid det ska vara mellan olika spawn-sets
-    [SerializeField,Range(0.1f,0.99f)] float spawnCallRecution = 0f; //hur mycket spawnCallTime ska minska efter en viss tid. Detta ska göra att spelet blir stegvis svårare
+    
     [SerializeField] Vector3 spawnCords = new Vector3();//vart fienden ska spawna
     [SerializeField] float firstRowPos = 0; //vilken y höjd som den lägsta raden har
     [SerializeField] int maxPerRow = 10; //hur många fiender det får vara på en rad
+
+    [Header("Increase difficulty")]
+    [SerializeField] float difficultyDelay = 0f; //hur länge i sekunder det är mellan varje difficult increase
+    [SerializeField, Range(0.80f, 0.99f)] float spawnCallRecution = 0f; //hur mycket spawnCallTime ska minska efter en viss tid. Detta ska göra att spelet blir stegvis svårare
+    public float enemyExtraSpeed = 0f;//kommer göra att fienden rör sig och gör andra saker snabbare
+    [SerializeField] float extraSpeedIncrease = 0f;//hur mycket extraspeed enemies ska få efter (difficultyDelay) sekunder
+    [SerializeField] float maxExtraSpeed = 0f;//enemies kan inte få mer extra speed än detta
 
     [Header("Odds")] //odsen för att spawna en typ av fiende
     [SerializeField] int diveEnemyOdds = 0;
@@ -93,10 +100,14 @@ public class EnemySpawner : MonoBehaviour //av K-J
                 }
             }
 
-            reductionTimer = +Time.deltaTime;
-            if(reductionTimer == 20)//spelet blir svårare varje 20 sekunder
+            reductionTimer += Time.deltaTime;
+            if(reductionTimer >= difficultyDelay)//spelet blir svårare varje (difficultyDelay) sekunder
             {
                 spawnCallTime *= spawnCallRecution;
+                enemyExtraSpeed += extraSpeedIncrease;
+                enemyExtraSpeed = Mathf.Clamp(enemyExtraSpeed, 0f, maxExtraSpeed);
+
+                reductionTimer = 0f;
             }
         }
         
@@ -120,7 +131,8 @@ public class EnemySpawner : MonoBehaviour //av K-J
                 spawnCount = Mathf.Clamp(enemyAmount, 0, maxPerRow / 2 - GetEnemyAmount(currentEnemy));//hälften så många startka fiender får spawna på sin rad
                 //--||-- fast för starka fienden
             }
-            spawnTimer = spawnIntervalTime;
+            if(enemyExtraSpeed < 1)spawnTimer = spawnIntervalTime;
+            else spawnTimer = spawnIntervalTime / enemyExtraSpeed;
         }
 
     }
