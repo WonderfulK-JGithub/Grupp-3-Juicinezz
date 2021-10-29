@@ -42,3 +42,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 4037256791
+    locked: 0
+  - name: PowerUp
+    uniqueID: 2099550927
+    locked: 0
+  - name: Enemies
+    uniqueID: 722021045
+    locked: 0
+  - name: Effects
+    uniqueID: 4066032375
+    locked: 0
+  - name: Player
+    uniqueID: 3414078255
+    locked: 0

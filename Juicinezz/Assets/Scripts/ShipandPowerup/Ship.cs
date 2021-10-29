@@ -95,7 +95,7 @@ public class Ship : MonoBehaviour
         
         
     }
-    public void TakeDamage(int damage)
+    public virtual void TakeDamage(int damage)
     {
         if (!invincibility)
         {

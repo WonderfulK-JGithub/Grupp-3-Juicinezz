@@ -114,7 +114,7 @@ public class GrunderFiender : MonoBehaviour
         //Destroy(gameObject); //tar bort fiende objektet
         anim.SetTrigger("Die");
 
-        int getspowerup = Random.Range(0, 40);
+        int getspowerup = Random.Range(0, 80);
 
         if (getspowerup == 0)
         {

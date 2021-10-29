@@ -4758,7 +4758,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: cbcf676dddb58644b84d62d6bb82750e, type: 2}
+  - {fileID: 2100000, guid: 6629acaaef1279e4883d644864e7677f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4776,8 +4776,8 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -228934921
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_RenderMode: 0
   m_SortMode: 0
@@ -9562,7 +9562,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 16ed30c98f6f9824e95bc4769cdee8e7, type: 2}
+  - {fileID: 2100000, guid: 7f757af302c0d0a4c82dcf754440c427, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9580,8 +9580,8 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -228934921
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_RenderMode: 0
   m_SortMode: 0
@@ -14366,7 +14366,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 82cf6b16b85d2cf4ca1c1c9feb583a45, type: 2}
+  - {fileID: 2100000, guid: 07c8fbeb45f1b164c892b1fa52e686eb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14384,8 +14384,8 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -228934921
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_RenderMode: 0
   m_SortMode: 0
@@ -14487,8 +14487,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 722021045
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7058d6c80ce58ab48927f83b466c566d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -14526,7 +14526,7 @@ MonoBehaviour:
   Shield: {fileID: 5950417537260412333, guid: e2e1caaaea98a4f488a9e91df493ef08, type: 3}
   Speed: {fileID: 3112040262585985183, guid: c0f3128292347c5478f4eac2a1b1d22a, type: 3}
   enemySpeed: {x: 3, y: 1}
-  pointValue: 0
+  pointValue: 420
   isAttacking: 0
   targetRotation: 0
   currentRotation: 0
@@ -14537,11 +14537,11 @@ MonoBehaviour:
   player: {fileID: 0}
   sprite: {fileID: 0}
   angrycolor: {r: 1, g: 0.47843137, b: 0.47843137, a: 1}
-  Par1: {fileID: 0}
+  Par1: {fileID: 719877028}
   Par2: {fileID: 2076224158}
   Par3: {fileID: 812757580}
   Angytimer: 0
-  countDown: 2
+  countDown: 1
 --- !u!50 &5325379774076666489
 Rigidbody2D:
   serializedVersion: 4

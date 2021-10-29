@@ -19,4 +19,10 @@ public class Babyship : Ship
             Destroy(gameObject); //Dödar sig själv när countDown slår 0. Mattias.
         }
     }
+
+
+    public override void TakeDamage(int damage)
+    {
+        Destroy(gameObject);
+    }
 }

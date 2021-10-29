@@ -20,6 +20,7 @@ public class SceneTransition : MonoBehaviour//av K-J
 
     private void Awake()
     {
+        Screen.SetResolution(1080, 1080,true);
         current = this;
         anim = GetComponent<Animator>();
     }
