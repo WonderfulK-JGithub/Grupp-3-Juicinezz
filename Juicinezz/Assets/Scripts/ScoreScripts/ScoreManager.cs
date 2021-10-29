@@ -9,6 +9,8 @@ public class ScoreManager : MonoBehaviour
     
     List<ScoreInfo> currentLeaderBoard = null; //data på hur leader
 
+    [SerializeField] AudioSource musicSource = null;
+
     [Header("WriteName")]
     [SerializeField] GameObject writeNameParent = null;//parenten för all UI kopplat till att skriva sitt namn
     [SerializeField] TMP_InputField inputField = null; //inputfieldet som man skriver sitt spelarnamn i
@@ -27,6 +29,9 @@ public class ScoreManager : MonoBehaviour
 
     private void Awake()
     {
+        AudioListener.volume = PlayerPrefs.GetFloat("musicVolume");
+
+
         current = this;
         anim = GetComponent<Animator>();
         currentLeaderBoard = SaveSystem.Load().leaderBoard;
@@ -145,6 +150,9 @@ public class ScoreManager : MonoBehaviour
         nameText.text = playerName;
         writeNameParent.SetActive(false);
         gameIsOngoing = true;
+
+
+        musicSource.Play(); // börjar spela musiken
     }
 
     public void SaveLeaderboard()//sparar den nuvarande leaderboarden
@@ -161,6 +169,8 @@ public class ScoreManager : MonoBehaviour
         NewContender();
         SaveLeaderboard();
         gameIsOngoing = false;
+
+        musicSource.Stop();
     }
 
     public void Restart()

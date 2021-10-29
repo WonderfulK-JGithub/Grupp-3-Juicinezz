@@ -16,6 +16,9 @@ public class Clone : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            Babyship smollship = FindObjectOfType<Babyship>();
+            if (smollship != null) Destroy(smollship.gameObject);//dödar klonsheppet om man redan hade ett
+
             SoundManagerScript.PlaySound("PowerUp");
             // SoundManagerScript.PlaySound("1Up"); //Spelar powerup ljudet /Theo
             int random = Random.Range(0,2);

@@ -49,9 +49,10 @@ public class EnemySpawner : MonoBehaviour //av K-J
                 spawnTimer -= Time.deltaTime;
                 if (spawnTimer <= 0f)
                 {
+                    spawnDirection = Random.Range(0, 2) == 0 ? 1 : -1;//ger en random starthåll för enemy
                     GrunderFiender enemy = Instantiate(enemyPrefabs[currentEnemy], new Vector3(spawnCords.x * spawnDirection, spawnCords.y, 0f), Quaternion.identity).GetComponent<GrunderFiender>();//spawnar en fiende
                     enemy.direction = spawnDirection;//gör att den åker åt rätt håll
-
+                   
                     switch (currentEnemy)//ger enemyn rätt rad baserat på vilken typ den är
                     {
                         //den kollar alltid om den första raden är full. Är det så hamnar fienden på den andra raden (gäller inte den starka fienden som bara har en rad)
@@ -116,7 +117,7 @@ public class EnemySpawner : MonoBehaviour //av K-J
     public void SpawnEnemySet(int enemyAmount)
     {
         currentEnemy = RandomEnemy();
-        spawnDirection = Random.Range(0, 2) == 0 ? 1 : -1;//ger en random starthåll på set:et
+        
 
         if(currentEnemy != -1)//om currentEnemy == -1 är alla rader fulla
         {
