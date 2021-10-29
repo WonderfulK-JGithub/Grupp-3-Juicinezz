@@ -13,15 +13,17 @@ public class Blaster : MonoBehaviour
     {
         if(ScoreManager.current.gameIsOngoing)
         {
-            if (Input.GetButtonDown("Fire1"))
+            cooldownTimer += Time.deltaTime;
+
+            if (Input.GetButtonDown("Fire1") && shootCooldown <= cooldownTimer && LetsButtonMash == false)
             {
                 Shoot();//BANG. Mattias.
+                cooldownTimer = 0;
             }
 
             if (LetsButtonMash)
             {
 
-                cooldownTimer += Time.deltaTime;
                 if (shootCooldown <= cooldownTimer)
                 {
                     Shoot();
